@@ -1,6 +1,6 @@
 # DataSandbox GenAI help-seeking analysis
 
-Analysis code for the manuscript *Asking Without Stopping: When, Where, and What Graduate Students Ask a Generative AI Tutor in a Manipulative Statistics Simulation*. The code turns DataSandbox interaction logs, coded tutor requests, an end-of-session survey and course grades into every number, table and figure reported in the manuscript and its supplementary material. The analyses include time-to-first-request survival, lag-sequential analysis, module-adjusted GEE models, and the specification curve.
+Analysis code for the manuscript *Asking Without Stopping: Optional Generative AI Help as a Detour Within, Not a Substitute for, Simulation-Based Exploration*. The code turns DataSandbox interaction logs, coded tutor requests, an end-of-session survey and course grades into every number, table and figure reported in the manuscript and its supplementary material. The analyses include time-to-first-request survival, lag-sequential analysis, module-adjusted GEE models, and the specification curve.
 
 ## Data
 
