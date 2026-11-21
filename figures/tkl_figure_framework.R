@@ -27,7 +27,7 @@ B <- bind_rows(
 # context unit (survey) and ESM branch, converging box
 ctx <- tibble(x = cx[["units"]], y = -0.55, w = w[["units"]], h = 0.95, label = "Survey: 33 responses from\n13 learners, 3 class sessions", lty = "solid", fill = "white", bold = FALSE, tag = NA)
 esm <- tibble(x = cx[["an"]], y = -0.55, w = w[["an"]], h = 0.95, label = "ESM: specification curve (8 models),\nearlier vs. corrected coding,\ntransition networks", lty = "solid", fill = "white", bold = FALSE, tag = NA)
-conv <- tibble(x = 9.475, y = -0.55, w = 5.55, h = 0.95, label = "Help requests to an optional GenAI tutor are task-located and\nmost often seek sensemaking; learners return to exploration\nafter requested and scripted support alike", lty = "solid", fill = fill0, bold = TRUE, tag = NA)
+conv <- tibble(x = 9.475, y = -0.55, w = 5.55, h = 0.95, label = "Optional GenAI help appeared to work as a detour within\nexploration, not a substitute: requests were task-located, and\nlearners returned after requested and scripted support alike", lty = "solid", fill = fill0, bold = TRUE, tag = NA)
 AllB <- bind_rows(B, ctx, esm, conv)
 edge <- function(x1, y1, x2, y2, lt = "solid", col = ink) tibble(x = x1, y = y1, xend = x2, yend = y2, lt = lt, col = col)
 E <- bind_rows(lapply(names(ly), function(l) bind_rows(
