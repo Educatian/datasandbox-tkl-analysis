@@ -1,0 +1,11 @@
+# Participant data never leaves data/ (raw extract, consented extract, crosswalk, survey + comments)
+data/
+# Local-only build artefacts
+__pycache__/
+# Figure 2 inputs: app source clones, dev-server logs and raw captures (local build; see repro/README.md)
+figures/interface/ds31/
+figures/interface/ds31_feb18/
+figures/interface/*.log
+figures/interface/raw_*.png
+repro/.venv/
+__pycache__/

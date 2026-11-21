@@ -1,0 +1,23 @@
+diff --git a/App.tsx b/App.tsx
+index c82954b..4114096 100644
+--- a/App.tsx
++++ b/App.tsx
+@@ -358,7 +358,7 @@ const CurriculumView: React.FC<{ navigateTo: (moduleId: string) => void, setting
+                                 {assessment.modules.map((mod) => {
+                                     // Visibility Logic
+                                     const setting = settings?.[mod.id];
+-                                    const state = setting?.visibility_state || 'hidden'; // Default to hidden
++                                    const state = setting?.visibility_state || (isSupabaseConfigured ? 'hidden' : 'visible'); // LOCAL SCREENSHOT PATCH: all released modules visible
+                                     const releaseAt = setting?.release_at ? new Date(setting.release_at) : null;
+                                     const isScheduledReleased = releaseAt ? new Date() >= releaseAt : false;
+ 
+@@ -420,7 +420,8 @@ const CurriculumView: React.FC<{ navigateTo: (moduleId: string) => void, setting
+ 
+ const App: React.FC = () => {
+     const [activeModuleId, setActiveModuleId] = useState<string | null>(null);
+-    const [user, setUserState] = useState<User | null>(null);
++    // LOCAL SCREENSHOT PATCH (not committed): no Supabase -> local screenshot user, no login, no DB writes
++    const [user, setUserState] = useState<User | null>(isSupabaseConfigured ? null : ({ id: "local-screenshot", email: "screenshot@localhost" } as unknown as User));
+     const [isAdminState, setIsAdminState] = useState(false);
+ 
+     const [authLoading, setAuthLoading] = useState(true);
