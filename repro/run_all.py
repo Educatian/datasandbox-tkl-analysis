@@ -15,7 +15,8 @@ RAW = {  # raw inputs (participant data, not shared), relative to ROOT
 SEED = "20261121"                                     # bootstrap seed (esm_outcome.py, jev_agreement_consent16.py)
 RSCRIPT = os.environ.get("RSCRIPT") or shutil.which("Rscript") or "Rscript"   # R 4.5.2 on PATH, or set RSCRIPT
 PY_STEPS = ["build_extract.py", "reanalysis.py", "sensitivity.py", "survey.py", "esm_outcome.py",
-            "jev_agreement_consent16.py", "figures/prep_figure_data.py"]
+            "jev_agreement_consent16.py", "figures/prep_figure_data.py",
+            "review_r1_analyses.py"]
 R_STEPS = ["tkl_figures.R", "tkl_figures_redesign.R", "tkl_figures_new.R", "tkl_figure_framework.R"]  # cwd = figures/
 # ----------------------------------------
 

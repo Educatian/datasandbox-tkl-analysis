@@ -50,7 +50,20 @@ C |= {"requests.learners": rq["learners"], "requests.n": rq["n"], "requests.sess
       "fig5.zero_request_modules_10plus": len(zero), "fig5.zero_request_sessions_min": zero.sessions.min(), "fig5.zero_request_sessions_max": zero.sessions.max()}
 for code, r in t2["by_code"].items(): C |= {f"table2.{code}.n": r["n"], f"table2.{code}.pct": r["pct"], f"table2.{code}.learners": r["learners"]}
 C |= {"table2.total": t2["total"], "table2.requesters": t2["requesters"], "table2.top3_requests": t2["top3_requests"],
-      "profiles.n": len(ra["profiles"]["corrected"]), "profiles.changed": ra["profiles"]["changed"]}
+}
+rr = J("review_r1.json"); ci = rr["cluster_boot_95ci"]; lag = rr["req_lag3_10_mean_share"]; me = rr["module_entry_to_first_request_min"]
+specs = pd.concat([pd.read_csv(RESULTS / "gee_models.csv").OR, pd.read_csv(RESULTS / "fe_logit_models.csv").OR])
+C |= {"rev.MM_pct": 100 * rr["next_is_M"]["M_to_M"], "rev.MM_lo": 100 * ci["M_to_M"][0], "rev.MM_hi": 100 * ci["M_to_M"][1],
+      "rev.R_lo": 100 * ci["reply"][0], "rev.R_hi": 100 * ci["reply"][1], "rev.T_lo": 100 * ci["tutor_initiated"][0], "rev.T_hi": 100 * ci["tutor_initiated"][1],
+      "rev.sec_R": rr["seconds_to_next_M_median_iqr"]["reply"][0], "rev.sec_T": rr["seconds_to_next_M_median_iqr"]["tutor_initiated"][0],
+      "rev.T_state_pct": 100 * rr["next_is_M"]["T_state"], "rev.T_state_n": rr["n"]["T_state"],
+      "rev.T_welcome_pct": 100 * rr["next_is_M"]["T_welcome"], "rev.T_welcome_n": rr["n"]["T_welcome"],
+      "rev.top3_reply_n": rr["without_top3"]["n_reply"], "rev.top3_reply_M": round(rr["without_top3"]["reply"] * rr["without_top3"]["n_reply"]),
+      "rev.entry_median": me["median"], "rev.entry_iqr_lo": me["iqr"][0], "rev.entry_iqr_hi": me["iqr"][1], "rev.entry_visits": me["n_visits_with_request"],
+      "rev.lag_nav_pct": 100 * lag["Navigation"], "rev.lag_req_pct": 100 * lag["Learner request"], "rev.lag_login_pct": 100 * lag["Login or logout"],
+      "rev.windows_truncated": 45 - rr["req_windows_reaching_lag10"], "rev.no_reply": sum(v for k, v in rr["request_next_code"].items() if k != "R"),
+      "rev.spec_or_min": specs.min(), "rev.spec_or_max": specs.max(),
+      "rev.instrumental_pct": 100 * (t2["by_code"]["sensemaking"]["n"] + t2["by_code"]["clarification"]["n"]) / t2["total"]}
 C |= {"fig6.U_prev_M_pct": share("learner", -1, "Manipulation"), "fig6.U_prev_M_n": int(pk("learner", -1, "Manipulation")["count"].sum()),
       "fig6.U_prev_nav_login": int(pk("learner", -1, "Navigation")["count"].sum() + pk("learner", -1, "Login or logout")["count"].sum()),
       "fig6.U_next_tutor_pct": share("learner", 1, "Tutor message"), "fig6.U_plus2_M_pct": share("learner", 2, "Manipulation"),

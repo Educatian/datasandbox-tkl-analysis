@@ -1,183 +1,995 @@
 {
  "_about": "Every number TKL_manuscript.md and ESM_S1.md quote (read 2026-11-21), as printed there. check_numbers.py compares each data-derived entry with the regenerated outputs at the printed precision. external = fixed by design or records outside the data (not computed). pending = the fixed code gives a different value; manuscript not edited (see crosscheck.md).",
  "numbers": [
-  {"id": "versions.python", "where": "Data Analysis", "value": "3.11.9"},
-  {"id": "versions.pandas", "where": "Data Analysis", "value": "2.3.3"},
-  {"id": "versions.statsmodels", "where": "Data Analysis", "value": "0.14.6"},
-  {"id": "versions.scipy", "where": "Data Analysis", "value": "1.17.1"},
-  {"id": "versions.lifelines", "where": "Data Analysis", "value": "0.30.3"},
-  {"id": "versions.R", "where": "Data Analysis", "value": "4.5.2"},
-  {"id": "versions.ggplot2", "where": "Data Analysis", "value": "4.0.2"},
-
-  {"id": "students_used", "where": "Setting and Participants", "value": "23", "external": "account list / gradebook"},
-  {"id": "consent_records", "where": "Setting and Participants", "value": "16", "external": "gradebook consent field"},
-  {"id": "unmatched_consent_records", "where": "Setting and Participants", "value": "1", "external": "gradebook vs accounts"},
-  {"id": "class_sessions", "where": "Setting and Participants; ESM Note 2", "value": "3", "external": "course schedule (Jan 14, Jan 26, Feb 2)"},
-  {"id": "tutor_reply_sentences", "where": "Learning Environment", "value": "2", "external": "system prompt"},
-
-  {"id": "sample.learners", "where": "Abstract; Setting; Table 1 note", "value": "15"},
-  {"id": "sample.events", "where": "Setting; Table 1 note", "value": "6726"},
-  {"id": "sample.sessions", "where": "Setting; Table 1 note; RQ1", "value": "72"},
-  {"id": "sample.modules", "where": "Setting", "value": "16"},
-  {"id": "sample.portal_pages", "where": "Setting", "value": "1"},
-  {"id": "sample.first_day", "where": "Setting", "value": "2026-01-14"},
-  {"id": "sample.last_day", "where": "Setting", "value": "2026-02-15"},
-  {"id": "sample.events_per_learner_min", "where": "Setting", "value": "55"},
-  {"id": "sample.events_per_learner_max", "where": "Setting", "value": "835"},
-  {"id": "sample.sessions_per_learner_min", "where": "Setting", "value": "2"},
-  {"id": "sample.sessions_per_learner_max", "where": "Setting", "value": "11"},
-  {"id": "sample.class_day_pct", "where": "Setting (86% of the logged events)", "value": "86"},
-  {"id": "fig1.learner_rows", "where": "Figure 1 note (P01-P15)", "value": "15"},
-
-  {"id": "table1.M", "where": "Table 1", "value": "4125"},
-  {"id": "table1.G", "where": "Table 1", "value": "798"},
-  {"id": "table1.P", "where": "Table 1", "value": "520"},
-  {"id": "table1.S", "where": "Table 1", "value": "834"},
-  {"id": "table1.U", "where": "Table 1; Figure 1, 5, 6 notes", "value": "45"},
-  {"id": "table1.R", "where": "Table 1; Data and Event Coding", "value": "40"},
-  {"id": "table1.T", "where": "Table 1; Figure 6 note", "value": "364"},
-  {"id": "earlier.reclassified_as_M", "where": "Data and Event Coding (1,354 events)", "value": "1354"},
-  {"id": "earlier.tutor_messages", "where": "Data and Event Coding (all 404 tutor messages)", "value": "404"},
-
-  {"id": "jev.n", "where": "Data and Event Coding", "value": "45"},
-  {"id": "jev.agreement_pct", "where": "Data and Event Coding", "value": "91.1"},
-  {"id": "jev.kappa", "where": "Data and Event Coding", "value": ".88"},
-  {"id": "jev.ci_lo", "where": "Data and Event Coding", "value": ".76"},
-  {"id": "jev.ci_hi", "where": "Data and Event Coding", "value": ".97"},
-
-  {"id": "km.sessions", "where": "Data Analysis; RQ1; Figure 4 note", "value": "57"},
-  {"id": "km.events", "where": "Data Analysis (all 15 sessions with a request); Figure 4 note", "value": "15"},
-  {"id": "km.at_risk_30", "where": "Data Analysis (only one session remained at risk at 30 minutes)", "value": "1"},
-  {"id": "km.conditional_median", "where": "RQ1", "value": "3.18"},
-  {"id": "km.iqr_lo", "where": "RQ1", "value": "2.25"},
-  {"id": "km.iqr_hi", "where": "RQ1", "value": "5.47"},
-  {"id": "km.S10_pct", "where": "RQ1 (63.7% ... at 10 minutes)", "value": "63.7"},
-  {"id": "km.S5", "where": "owner brief (S(5) = .767); Figure 4 label", "value": ".767"},
-
-  {"id": "lsa.transitions", "where": "Data Analysis; Figure 7 note", "value": "6654"},
-  {"id": "gee.dropped_modules", "where": "Data Analysis (we dropped one module)", "value": "1"},
-  {"id": "gee.learners", "where": "Data Analysis; RQ3", "value": "15"},
-
-  {"id": "requests.learners", "where": "RQ1 (Ten of the 15 learners)", "value": "10"},
-  {"id": "requests.n", "where": "RQ1", "value": "45"},
-  {"id": "requests.sessions", "where": "RQ1 (15 of the 72 sessions)", "value": "15"},
-  {"id": "requests.per_requester_median", "where": "RQ1", "value": "3"},
-  {"id": "requests.per_requester_min", "where": "RQ1", "value": "1"},
-  {"id": "requests.per_requester_max", "where": "RQ1", "value": "12"},
-  {"id": "requests.two_busiest_weeks", "where": "RQ1 (Forty-two of the 45)", "value": "42"},
-  {"id": "fig5.galton_requests", "where": "RQ1", "value": "12"},
-  {"id": "fig5.galton_sessions", "where": "RQ1", "value": "10"},
-  {"id": "fig5.zero_request_modules_10plus", "where": "RQ1 (six modules drew no requests)", "value": "6"},
-  {"id": "fig5.zero_request_sessions_min", "where": "RQ1 (10 to 14 sessions)", "value": "10"},
-  {"id": "fig5.zero_request_sessions_max", "where": "RQ1 (10 to 14 sessions)", "value": "14"},
-
-  {"id": "table2.sensemaking.n", "where": "Table 2; RQ2", "value": "18"},
-  {"id": "table2.sensemaking.pct", "where": "Table 2; RQ2 (40%)", "value": "40.0"},
-  {"id": "table2.sensemaking.learners", "where": "Table 2; RQ2", "value": "6"},
-  {"id": "table2.frustration.n", "where": "Table 2; RQ2", "value": "10"},
-  {"id": "table2.frustration.pct", "where": "Table 2; RQ2 (22%)", "value": "22.2"},
-  {"id": "table2.frustration.learners", "where": "Table 2; RQ2 (two wrote all 10)", "value": "2"},
-  {"id": "table2.off-topic.n", "where": "Table 2", "value": "7"},
-  {"id": "table2.off-topic.pct", "where": "Table 2", "value": "15.6"},
-  {"id": "table2.off-topic.learners", "where": "Table 2", "value": "4"},
-  {"id": "table2.procedural.n", "where": "Table 2", "value": "6"},
-  {"id": "table2.procedural.pct", "where": "Table 2", "value": "13.3"},
-  {"id": "table2.procedural.learners", "where": "Table 2", "value": "4"},
-  {"id": "table2.clarification.n", "where": "Table 2", "value": "1"},
-  {"id": "table2.clarification.pct", "where": "Table 2", "value": "2.2"},
-  {"id": "table2.clarification.learners", "where": "Table 2", "value": "1"},
-  {"id": "table2.affirmation.n", "where": "Table 2", "value": "2"},
-  {"id": "table2.affirmation.pct", "where": "Table 2", "value": "4.4"},
-  {"id": "table2.affirmation.learners", "where": "Table 2", "value": "1"},
-  {"id": "table2.social.n", "where": "Table 2", "value": "1"},
-  {"id": "table2.social.pct", "where": "Table 2", "value": "2.2"},
-  {"id": "table2.social.learners", "where": "Table 2", "value": "1"},
-  {"id": "table2.total", "where": "Table 2", "value": "45"},
-  {"id": "table2.requesters", "where": "Table 2; RQ2", "value": "10"},
-  {"id": "table2.top3_requests", "where": "RQ2 (Three learners wrote 30 of the 45)", "value": "30"},
-  {"id": "profiles.n", "where": "Data Analysis (five descriptive activity profiles)", "value": "5"},
-  {"id": "profiles.changed", "where": "RQ2 (2 of the 15 learners changing profiles; corrected 2026-11-21 from 3 after the code review)", "value": "2"},
-
-  {"id": "fig6.U_prev_M_pct", "where": "RQ3 (98% of cases)", "value": "98"},
-  {"id": "fig6.U_prev_M_n", "where": "RQ3 (44 of 45)", "value": "44"},
-  {"id": "fig6.U_prev_nav_login", "where": "RQ3 (navigation and login events were absent at that lag)", "value": "0"},
-  {"id": "fig6.U_next_tutor_pct", "where": "RQ3 (89% of cases)", "value": "89"},
-  {"id": "fig6.U_plus2_M_pct", "where": "RQ3 (69% of events)", "value": "69"},
-  {"id": "fig6.T_prev_M_pct", "where": "RQ3 (82% at the preceding event)", "value": "82"},
-  {"id": "fig6.T_plus2_tutor_pct", "where": "RQ3 (49%)", "value": "49"},
-  {"id": "fig6.base_M_pct", "where": "Figure 6 note (61.3%)", "value": "61.3"},
-  {"id": "next.U_reply_pct", "where": "RQ3 (88.9% were followed directly by a tutor reply)", "value": "88.9"},
-  {"id": "next.R_n", "where": "RQ3; Figure 7 note; ESM S1 note", "value": "37"},
-  {"id": "next.R_M_pct", "where": "RQ3 (78.4%)", "value": "78.4"},
-  {"id": "next.base_pct", "where": "RQ3; ESM S1 note (62.0%)", "value": "62.0"},
-  {"id": "next.R_z", "where": "RQ3", "value": "2.06"},
-  {"id": "next.T_n", "where": "RQ3; Figure 7 note", "value": "361"},
-  {"id": "next.T_M_pct", "where": "RQ3 (77.8%)", "value": "77.8"},
-  {"id": "next.T_z", "where": "RQ3", "value": "6.38"},
-  {"id": "next.R_ended_session", "where": "ESM S1 note (Three replies that ended a session)", "value": "3"},
-  {"id": "return.R_5_pct", "where": "RQ3 (91.9%)", "value": "91.9"},
-  {"id": "return.T_5_pct", "where": "RQ3 (96.1%)", "value": "96.1"},
-  {"id": "t3.pre", "where": "RQ3", "value": ".60"},
-  {"id": "t3.post", "where": "RQ3", "value": ".67"},
-  {"id": "t3.sessions", "where": "RQ3", "value": "14"},
-  {"id": "t3.W", "where": "RQ3", "value": "39"},
-  {"id": "t3.p", "where": "RQ3", "value": ".43"},
-  {"id": "gee.OR", "where": "RQ3", "value": "0.70"},
-  {"id": "gee.lo", "where": "RQ3", "value": "0.45"},
-  {"id": "gee.hi", "where": "RQ3", "value": "1.09"},
-  {"id": "gee.p", "where": "RQ3", "value": ".12"},
-  {"id": "gee.events", "where": "RQ3", "value": "4597"},
-  {"id": "spec.models", "where": "RQ3 (eight models)", "value": "8"},
-  {"id": "spec.intervals_including_1", "where": "RQ3 (every interval ... included 1)", "value": "8"},
-  {"id": "spec.converged", "where": "ESM S2 note (all models converged)", "value": "8"},
-  {"id": "earlier.base_pct", "where": "RQ3; ESM S1 note (81.3%); Discussion (81%)", "value": "81.3"},
-  {"id": "earlier.R_M_pct", "where": "RQ3 (81.1%)", "value": "81.1"},
-  {"id": "earlier.T_M_pct", "where": "RQ3 (82.3%)", "value": "82.3"},
-  {"id": "earlier.R_z", "where": "RQ3", "value": "-0.03"},
-  {"id": "earlier.T_z", "where": "RQ3", "value": "0.51"},
-  {"id": "s3.transitions_with_request", "where": "ESM S3 note", "value": "2057"},
-  {"id": "s3.transitions_without_request", "where": "ESM S3 note", "value": "4597"},
-  {"id": "s3.max_incoming", "where": "ESM S3 note (0 to 2,931)", "value": "2931"},
-
-  {"id": "survey.learners", "where": "Perceptions; ESM Note 2 (13 of the 15)", "value": "13"},
-  {"id": "survey.responses", "where": "Perceptions; ESM Note 2", "value": "33"},
-  {"id": "survey.all.control.M", "where": "Perceptions; Table S1", "value": "3.85"},
-  {"id": "survey.all.control.SD", "where": "Perceptions; Table S1", "value": "1.20"},
-  {"id": "survey.all.depth.M", "where": "Perceptions; Table S1", "value": "3.79"},
-  {"id": "survey.all.depth.SD", "where": "Perceptions; Table S1", "value": "1.11"},
-  {"id": "survey.all.ease.M", "where": "Perceptions; Table S1", "value": "3.82"},
-  {"id": "survey.all.ease.SD", "where": "Perceptions; Table S1", "value": "1.16"},
-  {"id": "survey.wave3_min_M", "where": "Perceptions (4.29-4.43)", "value": "4.29"},
-  {"id": "survey.wave3_max_M", "where": "Perceptions (4.29-4.43)", "value": "4.43"},
-  {"id": "survey.rho_requests_min", "where": "Perceptions (.06 to .10)", "value": ".06"},
-  {"id": "survey.rho_requests_max", "where": "Perceptions (.06 to .10)", "value": ".10"},
-  {"id": "survey.rho_events_min", "where": "Perceptions (.56 to .67)", "value": ".56"},
-  {"id": "survey.rho_events_max", "where": "Perceptions (.56 to .67)", "value": ".67"},
-  {"id": "survey.link_n", "where": "Perceptions (n = 13)", "value": "13"},
-  {"id": "survey.max_responses_in_one_wave", "where": "ESM Table S1 note (one learner did so)", "value": "2"},
-  {"id": "survey.1.n", "where": "Table S1 (January 14)", "value": "13"},
-  {"id": "survey.1.learners", "where": "Table S1", "value": "12"},
-  {"id": "survey.1.control.M", "where": "Table S1", "value": "3.69"}, {"id": "survey.1.control.SD", "where": "Table S1", "value": "1.25"},
-  {"id": "survey.1.depth.M", "where": "Table S1", "value": "3.69"}, {"id": "survey.1.depth.SD", "where": "Table S1", "value": "1.11"},
-  {"id": "survey.1.ease.M", "where": "Table S1", "value": "3.38"}, {"id": "survey.1.ease.SD", "where": "Table S1", "value": "1.12"},
-  {"id": "survey.2.n", "where": "Table S1 (January 26)", "value": "13"},
-  {"id": "survey.2.learners", "where": "Table S1", "value": "12"},
-  {"id": "survey.2.control.M", "where": "Table S1", "value": "3.69"}, {"id": "survey.2.control.SD", "where": "Table S1", "value": "1.25"},
-  {"id": "survey.2.depth.M", "where": "Table S1", "value": "3.62"}, {"id": "survey.2.depth.SD", "where": "Table S1", "value": "1.19"},
-  {"id": "survey.2.ease.M", "where": "Table S1", "value": "3.92"}, {"id": "survey.2.ease.SD", "where": "Table S1", "value": "1.19"},
-  {"id": "survey.3.n", "where": "Table S1 (February 2)", "value": "7"},
-  {"id": "survey.3.learners", "where": "Table S1; Perceptions (only six learners responded)", "value": "6"},
-  {"id": "survey.3.control.M", "where": "Table S1", "value": "4.43"}, {"id": "survey.3.control.SD", "where": "Table S1", "value": "0.98"},
-  {"id": "survey.3.depth.M", "where": "Table S1", "value": "4.29"}, {"id": "survey.3.depth.SD", "where": "Table S1", "value": "0.95"},
-  {"id": "survey.3.ease.M", "where": "Table S1", "value": "4.43"}, {"id": "survey.3.ease.SD", "where": "Table S1", "value": "0.98"},
-
-  {"id": "esm.n", "where": "ESM Note 1", "value": "15"},
-  {"id": "esm.n_tests", "where": "ESM Note 1 (24 uncorrected Spearman correlations)", "value": "24"},
-  {"id": "esm.rho", "where": "ESM Note 1", "value": ".20"},
-  {"id": "esm.ci_lo", "where": "ESM Note 1", "value": "-.35"},
-  {"id": "esm.ci_hi", "where": "ESM Note 1", "value": ".66"},
-  {"id": "esm.request_rate_min", "where": "ESM Note 1 (.18 to .37)", "value": ".18"},
-  {"id": "esm.request_rate_max", "where": "ESM Note 1 (.18 to .37)", "value": ".37"},
-  {"id": "esm.max_rho", "where": "ESM Note 1 (largest correlation .62)", "value": ".62"}
+  {
+   "id": "versions.python",
+   "where": "Data Analysis",
+   "value": "3.11.9"
+  },
+  {
+   "id": "versions.pandas",
+   "where": "Data Analysis",
+   "value": "2.3.3"
+  },
+  {
+   "id": "versions.statsmodels",
+   "where": "Data Analysis",
+   "value": "0.14.6"
+  },
+  {
+   "id": "versions.scipy",
+   "where": "Data Analysis",
+   "value": "1.17.1"
+  },
+  {
+   "id": "versions.lifelines",
+   "where": "Data Analysis",
+   "value": "0.30.3"
+  },
+  {
+   "id": "students_used",
+   "where": "Setting and Participants",
+   "value": "23",
+   "external": "account list / gradebook"
+  },
+  {
+   "id": "consent_records",
+   "where": "Setting and Participants",
+   "value": "16",
+   "external": "gradebook consent field"
+  },
+  {
+   "id": "unmatched_consent_records",
+   "where": "Setting and Participants",
+   "value": "1",
+   "external": "gradebook vs accounts"
+  },
+  {
+   "id": "class_sessions",
+   "where": "Setting and Participants; ESM Note 2",
+   "value": "3",
+   "external": "course schedule (Jan 14, Jan 26, Feb 2)"
+  },
+  {
+   "id": "tutor_reply_sentences",
+   "where": "Learning Environment",
+   "value": "2",
+   "external": "system prompt"
+  },
+  {
+   "id": "sample.learners",
+   "where": "Abstract; Setting; Table 1 note",
+   "value": "15"
+  },
+  {
+   "id": "sample.events",
+   "where": "Setting; Table 1 note",
+   "value": "6726"
+  },
+  {
+   "id": "sample.sessions",
+   "where": "Setting; Table 1 note; RQ1",
+   "value": "72"
+  },
+  {
+   "id": "sample.modules",
+   "where": "Setting",
+   "value": "16"
+  },
+  {
+   "id": "sample.portal_pages",
+   "where": "Setting",
+   "value": "1"
+  },
+  {
+   "id": "sample.first_day",
+   "where": "Setting",
+   "value": "2026-01-14"
+  },
+  {
+   "id": "sample.last_day",
+   "where": "Setting",
+   "value": "2026-02-15"
+  },
+  {
+   "id": "sample.events_per_learner_min",
+   "where": "Setting",
+   "value": "55"
+  },
+  {
+   "id": "sample.events_per_learner_max",
+   "where": "Setting",
+   "value": "835"
+  },
+  {
+   "id": "sample.sessions_per_learner_min",
+   "where": "Setting",
+   "value": "2"
+  },
+  {
+   "id": "sample.sessions_per_learner_max",
+   "where": "Setting",
+   "value": "11"
+  },
+  {
+   "id": "sample.class_day_pct",
+   "where": "Setting (86% of the logged events)",
+   "value": "86"
+  },
+  {
+   "id": "fig1.learner_rows",
+   "where": "Figure 1 note (P01-P15)",
+   "value": "15"
+  },
+  {
+   "id": "table1.M",
+   "where": "Table 1",
+   "value": "4125"
+  },
+  {
+   "id": "table1.G",
+   "where": "Table 1",
+   "value": "798"
+  },
+  {
+   "id": "table1.P",
+   "where": "Table 1",
+   "value": "520"
+  },
+  {
+   "id": "table1.S",
+   "where": "Table 1",
+   "value": "834"
+  },
+  {
+   "id": "table1.U",
+   "where": "Table 1; Figure 1, 5, 6 notes",
+   "value": "45"
+  },
+  {
+   "id": "table1.R",
+   "where": "Table 1; Data and Event Coding",
+   "value": "40"
+  },
+  {
+   "id": "table1.T",
+   "where": "Table 1; Figure 6 note",
+   "value": "364"
+  },
+  {
+   "id": "jev.n",
+   "where": "Data and Event Coding",
+   "value": "45"
+  },
+  {
+   "id": "jev.agreement_pct",
+   "where": "Data and Event Coding",
+   "value": "91.1"
+  },
+  {
+   "id": "jev.kappa",
+   "where": "Data and Event Coding",
+   "value": ".88"
+  },
+  {
+   "id": "jev.ci_lo",
+   "where": "Data and Event Coding",
+   "value": ".76"
+  },
+  {
+   "id": "jev.ci_hi",
+   "where": "Data and Event Coding",
+   "value": ".97"
+  },
+  {
+   "id": "km.sessions",
+   "where": "Data Analysis; RQ1; Figure 4 note",
+   "value": "57"
+  },
+  {
+   "id": "km.events",
+   "where": "Data Analysis (all 15 sessions with a request); Figure 4 note",
+   "value": "15"
+  },
+  {
+   "id": "km.at_risk_30",
+   "where": "Data Analysis (only one session remained at risk at 30 minutes)",
+   "value": "1"
+  },
+  {
+   "id": "km.conditional_median",
+   "where": "RQ1",
+   "value": "3.18"
+  },
+  {
+   "id": "km.iqr_lo",
+   "where": "RQ1",
+   "value": "2.25"
+  },
+  {
+   "id": "km.iqr_hi",
+   "where": "RQ1",
+   "value": "5.47"
+  },
+  {
+   "id": "km.S10_pct",
+   "where": "RQ1 (63.7% ... at 10 minutes)",
+   "value": "63.7"
+  },
+  {
+   "id": "km.S5",
+   "where": "owner brief (S(5) = .767); Figure 4 label",
+   "value": ".767"
+  },
+  {
+   "id": "lsa.transitions",
+   "where": "Data Analysis; Figure 7 note",
+   "value": "6654"
+  },
+  {
+   "id": "gee.dropped_modules",
+   "where": "Data Analysis (we dropped one module)",
+   "value": "1"
+  },
+  {
+   "id": "gee.learners",
+   "where": "Data Analysis; RQ3",
+   "value": "15"
+  },
+  {
+   "id": "requests.learners",
+   "where": "RQ1 (Ten of the 15 learners)",
+   "value": "10"
+  },
+  {
+   "id": "requests.n",
+   "where": "RQ1",
+   "value": "45"
+  },
+  {
+   "id": "requests.sessions",
+   "where": "RQ1 (15 of the 72 sessions)",
+   "value": "15"
+  },
+  {
+   "id": "requests.per_requester_median",
+   "where": "RQ1",
+   "value": "3"
+  },
+  {
+   "id": "requests.per_requester_min",
+   "where": "RQ1",
+   "value": "1"
+  },
+  {
+   "id": "requests.per_requester_max",
+   "where": "RQ1",
+   "value": "12"
+  },
+  {
+   "id": "requests.two_busiest_weeks",
+   "where": "RQ1 (Forty-two of the 45)",
+   "value": "42"
+  },
+  {
+   "id": "fig5.galton_requests",
+   "where": "RQ1",
+   "value": "12"
+  },
+  {
+   "id": "fig5.galton_sessions",
+   "where": "RQ1",
+   "value": "10"
+  },
+  {
+   "id": "fig5.zero_request_modules_10plus",
+   "where": "RQ1 (six modules drew no requests)",
+   "value": "6"
+  },
+  {
+   "id": "fig5.zero_request_sessions_min",
+   "where": "RQ1 (10 to 14 sessions)",
+   "value": "10"
+  },
+  {
+   "id": "fig5.zero_request_sessions_max",
+   "where": "RQ1 (10 to 14 sessions)",
+   "value": "14"
+  },
+  {
+   "id": "table2.sensemaking.n",
+   "where": "Table 2; RQ2",
+   "value": "18"
+  },
+  {
+   "id": "table2.sensemaking.pct",
+   "where": "Table 2; RQ2 (40%)",
+   "value": "40.0"
+  },
+  {
+   "id": "table2.sensemaking.learners",
+   "where": "Table 2; RQ2",
+   "value": "6"
+  },
+  {
+   "id": "table2.frustration.n",
+   "where": "Table 2; RQ2",
+   "value": "10"
+  },
+  {
+   "id": "table2.frustration.pct",
+   "where": "Table 2; RQ2 (22%)",
+   "value": "22.2"
+  },
+  {
+   "id": "table2.frustration.learners",
+   "where": "Table 2; RQ2 (two wrote all 10)",
+   "value": "2"
+  },
+  {
+   "id": "table2.off-topic.n",
+   "where": "Table 2",
+   "value": "7"
+  },
+  {
+   "id": "table2.off-topic.pct",
+   "where": "Table 2",
+   "value": "15.6"
+  },
+  {
+   "id": "table2.off-topic.learners",
+   "where": "Table 2",
+   "value": "4"
+  },
+  {
+   "id": "table2.procedural.n",
+   "where": "Table 2",
+   "value": "6"
+  },
+  {
+   "id": "table2.procedural.pct",
+   "where": "Table 2",
+   "value": "13.3"
+  },
+  {
+   "id": "table2.procedural.learners",
+   "where": "Table 2",
+   "value": "4"
+  },
+  {
+   "id": "table2.clarification.n",
+   "where": "Table 2",
+   "value": "1"
+  },
+  {
+   "id": "table2.clarification.pct",
+   "where": "Table 2",
+   "value": "2.2"
+  },
+  {
+   "id": "table2.clarification.learners",
+   "where": "Table 2",
+   "value": "1"
+  },
+  {
+   "id": "table2.affirmation.n",
+   "where": "Table 2",
+   "value": "2"
+  },
+  {
+   "id": "table2.affirmation.pct",
+   "where": "Table 2",
+   "value": "4.4"
+  },
+  {
+   "id": "table2.affirmation.learners",
+   "where": "Table 2",
+   "value": "1"
+  },
+  {
+   "id": "table2.social.n",
+   "where": "Table 2",
+   "value": "1"
+  },
+  {
+   "id": "table2.social.pct",
+   "where": "Table 2",
+   "value": "2.2"
+  },
+  {
+   "id": "table2.social.learners",
+   "where": "Table 2",
+   "value": "1"
+  },
+  {
+   "id": "table2.total",
+   "where": "Table 2",
+   "value": "45"
+  },
+  {
+   "id": "table2.requesters",
+   "where": "Table 2; RQ2",
+   "value": "10"
+  },
+  {
+   "id": "table2.top3_requests",
+   "where": "RQ2 (Three learners wrote 30 of the 45)",
+   "value": "30"
+  },
+  {
+   "id": "fig6.U_prev_M_pct",
+   "where": "RQ3 (98% of cases)",
+   "value": "98"
+  },
+  {
+   "id": "fig6.U_prev_M_n",
+   "where": "RQ3 (44 of 45)",
+   "value": "44"
+  },
+  {
+   "id": "fig6.U_prev_nav_login",
+   "where": "RQ3 (navigation and login events were absent at that lag)",
+   "value": "0"
+  },
+  {
+   "id": "fig6.U_next_tutor_pct",
+   "where": "RQ3 (89% of cases)",
+   "value": "89"
+  },
+  {
+   "id": "fig6.U_plus2_M_pct",
+   "where": "RQ3 (69% of events)",
+   "value": "69"
+  },
+  {
+   "id": "fig6.T_prev_M_pct",
+   "where": "RQ3 (82% at the preceding event)",
+   "value": "82"
+  },
+  {
+   "id": "fig6.T_plus2_tutor_pct",
+   "where": "RQ3 (49%)",
+   "value": "49"
+  },
+  {
+   "id": "fig6.base_M_pct",
+   "where": "Figure 6 note (61.3%)",
+   "value": "61.3"
+  },
+  {
+   "id": "next.U_reply_pct",
+   "where": "RQ3 (88.9% were followed directly by a tutor reply)",
+   "value": "88.9"
+  },
+  {
+   "id": "next.R_n",
+   "where": "RQ3; Figure 7 note; ESM S1 note",
+   "value": "37"
+  },
+  {
+   "id": "next.R_M_pct",
+   "where": "RQ3 (78.4%)",
+   "value": "78.4"
+  },
+  {
+   "id": "next.base_pct",
+   "where": "RQ3; ESM S1 note (62.0%)",
+   "value": "62.0"
+  },
+  {
+   "id": "next.R_z",
+   "where": "RQ3",
+   "value": "2.06"
+  },
+  {
+   "id": "next.T_n",
+   "where": "RQ3; Figure 7 note",
+   "value": "361"
+  },
+  {
+   "id": "next.T_M_pct",
+   "where": "RQ3 (77.8%)",
+   "value": "77.8"
+  },
+  {
+   "id": "next.T_z",
+   "where": "RQ3",
+   "value": "6.38"
+  },
+  {
+   "id": "next.R_ended_session",
+   "where": "ESM S1 note (Three replies that ended a session)",
+   "value": "3"
+  },
+  {
+   "id": "return.R_5_pct",
+   "where": "RQ3 (91.9%)",
+   "value": "91.9"
+  },
+  {
+   "id": "return.T_5_pct",
+   "where": "RQ3 (96.1%)",
+   "value": "96.1"
+  },
+  {
+   "id": "t3.pre",
+   "where": "RQ3",
+   "value": ".60"
+  },
+  {
+   "id": "t3.post",
+   "where": "RQ3",
+   "value": ".67"
+  },
+  {
+   "id": "t3.sessions",
+   "where": "RQ3",
+   "value": "14"
+  },
+  {
+   "id": "t3.W",
+   "where": "RQ3",
+   "value": "39"
+  },
+  {
+   "id": "t3.p",
+   "where": "RQ3",
+   "value": ".43"
+  },
+  {
+   "id": "gee.OR",
+   "where": "RQ3",
+   "value": "0.70"
+  },
+  {
+   "id": "gee.lo",
+   "where": "RQ3",
+   "value": "0.45"
+  },
+  {
+   "id": "gee.hi",
+   "where": "RQ3",
+   "value": "1.09"
+  },
+  {
+   "id": "gee.p",
+   "where": "RQ3",
+   "value": ".12"
+  },
+  {
+   "id": "gee.events",
+   "where": "RQ3",
+   "value": "4597"
+  },
+  {
+   "id": "spec.models",
+   "where": "RQ3 (eight models)",
+   "value": "8"
+  },
+  {
+   "id": "spec.intervals_including_1",
+   "where": "RQ3 (every interval ... included 1)",
+   "value": "8"
+  },
+  {
+   "id": "spec.converged",
+   "where": "ESM S2 note (all models converged)",
+   "value": "8"
+  },
+  {
+   "id": "earlier.base_pct",
+   "where": "RQ3; ESM S1 note (81.3%); Discussion (81%)",
+   "value": "81.3"
+  },
+  {
+   "id": "earlier.R_M_pct",
+   "where": "RQ3 (81.1%)",
+   "value": "81.1"
+  },
+  {
+   "id": "earlier.T_M_pct",
+   "where": "RQ3 (82.3%)",
+   "value": "82.3"
+  },
+  {
+   "id": "earlier.R_z",
+   "where": "RQ3",
+   "value": "-0.03"
+  },
+  {
+   "id": "earlier.T_z",
+   "where": "RQ3",
+   "value": "0.51"
+  },
+  {
+   "id": "s3.transitions_with_request",
+   "where": "ESM S3 note",
+   "value": "2057"
+  },
+  {
+   "id": "s3.transitions_without_request",
+   "where": "ESM S3 note",
+   "value": "4597"
+  },
+  {
+   "id": "s3.max_incoming",
+   "where": "ESM S3 note (0 to 2,931)",
+   "value": "2931"
+  },
+  {
+   "id": "survey.learners",
+   "where": "Perceptions; ESM Note 2 (13 of the 15)",
+   "value": "13"
+  },
+  {
+   "id": "survey.responses",
+   "where": "Perceptions; ESM Note 2",
+   "value": "33"
+  },
+  {
+   "id": "survey.all.control.M",
+   "where": "Perceptions; Table S1",
+   "value": "3.85"
+  },
+  {
+   "id": "survey.all.control.SD",
+   "where": "Perceptions; Table S1",
+   "value": "1.20"
+  },
+  {
+   "id": "survey.all.depth.M",
+   "where": "Perceptions; Table S1",
+   "value": "3.79"
+  },
+  {
+   "id": "survey.all.depth.SD",
+   "where": "Perceptions; Table S1",
+   "value": "1.11"
+  },
+  {
+   "id": "survey.all.ease.M",
+   "where": "Perceptions; Table S1",
+   "value": "3.82"
+  },
+  {
+   "id": "survey.all.ease.SD",
+   "where": "Perceptions; Table S1",
+   "value": "1.16"
+  },
+  {
+   "id": "survey.wave3_min_M",
+   "where": "Perceptions (4.29-4.43)",
+   "value": "4.29"
+  },
+  {
+   "id": "survey.wave3_max_M",
+   "where": "Perceptions (4.29-4.43)",
+   "value": "4.43"
+  },
+  {
+   "id": "survey.rho_requests_min",
+   "where": "Perceptions (.06 to .10)",
+   "value": ".06"
+  },
+  {
+   "id": "survey.rho_requests_max",
+   "where": "Perceptions (.06 to .10)",
+   "value": ".10"
+  },
+  {
+   "id": "survey.rho_events_min",
+   "where": "Perceptions (.56 to .67)",
+   "value": ".56"
+  },
+  {
+   "id": "survey.rho_events_max",
+   "where": "Perceptions (.56 to .67)",
+   "value": ".67"
+  },
+  {
+   "id": "survey.link_n",
+   "where": "Perceptions (n = 13)",
+   "value": "13"
+  },
+  {
+   "id": "survey.max_responses_in_one_wave",
+   "where": "ESM Table S1 note (one learner did so)",
+   "value": "2"
+  },
+  {
+   "id": "survey.1.n",
+   "where": "Table S1 (January 14)",
+   "value": "13"
+  },
+  {
+   "id": "survey.1.learners",
+   "where": "Table S1",
+   "value": "12"
+  },
+  {
+   "id": "survey.1.control.M",
+   "where": "Table S1",
+   "value": "3.69"
+  },
+  {
+   "id": "survey.1.control.SD",
+   "where": "Table S1",
+   "value": "1.25"
+  },
+  {
+   "id": "survey.1.depth.M",
+   "where": "Table S1",
+   "value": "3.69"
+  },
+  {
+   "id": "survey.1.depth.SD",
+   "where": "Table S1",
+   "value": "1.11"
+  },
+  {
+   "id": "survey.1.ease.M",
+   "where": "Table S1",
+   "value": "3.38"
+  },
+  {
+   "id": "survey.1.ease.SD",
+   "where": "Table S1",
+   "value": "1.12"
+  },
+  {
+   "id": "survey.2.n",
+   "where": "Table S1 (January 26)",
+   "value": "13"
+  },
+  {
+   "id": "survey.2.learners",
+   "where": "Table S1",
+   "value": "12"
+  },
+  {
+   "id": "survey.2.control.M",
+   "where": "Table S1",
+   "value": "3.69"
+  },
+  {
+   "id": "survey.2.control.SD",
+   "where": "Table S1",
+   "value": "1.25"
+  },
+  {
+   "id": "survey.2.depth.M",
+   "where": "Table S1",
+   "value": "3.62"
+  },
+  {
+   "id": "survey.2.depth.SD",
+   "where": "Table S1",
+   "value": "1.19"
+  },
+  {
+   "id": "survey.2.ease.M",
+   "where": "Table S1",
+   "value": "3.92"
+  },
+  {
+   "id": "survey.2.ease.SD",
+   "where": "Table S1",
+   "value": "1.19"
+  },
+  {
+   "id": "survey.3.n",
+   "where": "Table S1 (February 2)",
+   "value": "7"
+  },
+  {
+   "id": "survey.3.learners",
+   "where": "Table S1; Perceptions (only six learners responded)",
+   "value": "6"
+  },
+  {
+   "id": "survey.3.control.M",
+   "where": "Table S1",
+   "value": "4.43"
+  },
+  {
+   "id": "survey.3.control.SD",
+   "where": "Table S1",
+   "value": "0.98"
+  },
+  {
+   "id": "survey.3.depth.M",
+   "where": "Table S1",
+   "value": "4.29"
+  },
+  {
+   "id": "survey.3.depth.SD",
+   "where": "Table S1",
+   "value": "0.95"
+  },
+  {
+   "id": "survey.3.ease.M",
+   "where": "Table S1",
+   "value": "4.43"
+  },
+  {
+   "id": "survey.3.ease.SD",
+   "where": "Table S1",
+   "value": "0.98"
+  },
+  {
+   "id": "esm.n",
+   "where": "ESM Note 1",
+   "value": "15"
+  },
+  {
+   "id": "esm.n_tests",
+   "where": "ESM Note 1 (24 uncorrected Spearman correlations)",
+   "value": "24"
+  },
+  {
+   "id": "esm.rho",
+   "where": "ESM Note 1",
+   "value": ".20"
+  },
+  {
+   "id": "esm.ci_lo",
+   "where": "ESM Note 1",
+   "value": "-.35"
+  },
+  {
+   "id": "esm.ci_hi",
+   "where": "ESM Note 1",
+   "value": ".66"
+  },
+  {
+   "id": "esm.request_rate_min",
+   "where": "ESM Note 1 (.18 to .37)",
+   "value": ".18"
+  },
+  {
+   "id": "esm.request_rate_max",
+   "where": "ESM Note 1 (.18 to .37)",
+   "value": ".37"
+  },
+  {
+   "id": "esm.max_rho",
+   "where": "ESM Note 1 (largest correlation .62)",
+   "value": ".62"
+  },
+  {
+   "id": "rev.MM_pct",
+   "where": "RQ3 continuation baseline (83.2%)",
+   "value": "83.2"
+  },
+  {
+   "id": "rev.MM_lo",
+   "where": "RQ3 (95% CI [76.5",
+   "value": "76.5"
+  },
+  {
+   "id": "rev.MM_hi",
+   "where": "RQ3 (87.4])",
+   "value": "87.4"
+  },
+  {
+   "id": "rev.R_lo",
+   "where": "RQ3 replies [59.5",
+   "value": "59.5"
+  },
+  {
+   "id": "rev.R_hi",
+   "where": "RQ3 replies 92.6]",
+   "value": "92.6"
+  },
+  {
+   "id": "rev.T_lo",
+   "where": "RQ3 tutor-initiated [71.9",
+   "value": "71.9"
+  },
+  {
+   "id": "rev.T_hi",
+   "where": "RQ3 tutor-initiated 82.0]",
+   "value": "82.0"
+  },
+  {
+   "id": "rev.sec_R",
+   "where": "RQ3 median 14 s after a reply",
+   "value": "14"
+  },
+  {
+   "id": "rev.sec_T",
+   "where": "RQ3 2 s after a tutor-initiated message",
+   "value": "2"
+  },
+  {
+   "id": "rev.T_state_pct",
+   "where": "RQ3 state-triggered 81.3%",
+   "value": "81.3"
+  },
+  {
+   "id": "rev.T_state_n",
+   "where": "RQ3 n = 316",
+   "value": "316"
+  },
+  {
+   "id": "rev.T_welcome_pct",
+   "where": "RQ3 welcome 53.3%",
+   "value": "53.3"
+  },
+  {
+   "id": "rev.T_welcome_n",
+   "where": "RQ3 n = 45 welcome",
+   "value": "45"
+  },
+  {
+   "id": "rev.top3_reply_n",
+   "where": "RQ3 without top 3: of 12 replies",
+   "value": "12"
+  },
+  {
+   "id": "rev.top3_reply_M",
+   "where": "RQ3 without top 3: 8 of 12",
+   "value": "8"
+  },
+  {
+   "id": "rev.entry_median",
+   "where": "RQ1 median 1.1 min from module entry",
+   "value": "1.1"
+  },
+  {
+   "id": "rev.entry_iqr_lo",
+   "where": "RQ1 IQR 0.6",
+   "value": "0.6"
+  },
+  {
+   "id": "rev.entry_iqr_hi",
+   "where": "RQ1 IQR 2.2",
+   "value": "2.2"
+  },
+  {
+   "id": "rev.entry_visits",
+   "where": "RQ1 all 20 module visits",
+   "value": "20"
+  },
+  {
+   "id": "rev.lag_nav_pct",
+   "where": "RQ3 lags 3-10 navigation 30%",
+   "value": "30"
+  },
+  {
+   "id": "rev.lag_req_pct",
+   "where": "RQ3 further requests 12%",
+   "value": "12"
+  },
+  {
+   "id": "rev.lag_login_pct",
+   "where": "RQ3 login or logout 10%",
+   "value": "10"
+  },
+  {
+   "id": "rev.windows_truncated",
+   "where": "RQ3 10 of the 45 windows",
+   "value": "10"
+  },
+  {
+   "id": "rev.no_reply",
+   "where": "RQ3 after the other five",
+   "value": "5"
+  },
+  {
+   "id": "rev.spec_or_min",
+   "where": "RQ3 ORs 0.61",
+   "value": "0.61"
+  },
+  {
+   "id": "rev.spec_or_max",
+   "where": "RQ3 ORs 0.89",
+   "value": "0.89"
+  },
+  {
+   "id": "rev.instrumental_pct",
+   "where": "RQ2 42% of requests",
+   "value": "42"
+  }
  ]
 }
