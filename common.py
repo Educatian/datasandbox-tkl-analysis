@@ -32,7 +32,7 @@ def crosswalk():
 
 
 def suffix(v):
-    """Trailing account number of a log account or a typed login ID; None if absent."""
+    """Account number from 'datasandboxN@...' or a typed 'sandboxdataN' ID; None if absent."""
     s = str(v).strip().split("@")[0]
     digits = s[len(s.rstrip("0123456789")):]
     return int(digits) if digits else None
@@ -47,12 +47,32 @@ def week_mt(ts):
 def split_tutor(d, col):
     """Split tutor messages B into R (reply: right after U, or continuing a reply chain) and T (tutor-initiated).
     Within session only: the first event of a session has no predecessor, so a leading B is T. Needs d sorted."""
-    out, prev, sid = [], None, None
+    # Mock-review fix (2026-11-22): the first tutor message after a request that is still unanswered is its reply,
+    # even if the learner clicked in between (5 of 45 requests); replies were previously matched by adjacency only.
+    out, prev, sid, pending = [], None, None, False
     for s, c in zip(d.session_id, d[col]):
-        if s != sid: prev, sid = None, s
-        if c == "B": c = "R" if prev in ("U", "R") else "T"
+        if s != sid: prev, sid, pending = None, s, False
+        if c == "U": pending = True
+        if c == "B":
+            if prev in ("U", "R") or pending: c, pending = "R", False
+            else: c = "T"
         out.append(c); prev = c
     return out
+
+
+SEND_CLASS = "absolute right-2 top-1/2 -translate-y-1/2 p-1.5"        # chat send button (class prefix in the app)
+CHAT_INPUT_CLASS = "w-full bg-slate-800 border border-slate-600 rounded-xl pl-4"   # chat input box
+
+
+def chat_ui_clicks(d):
+    """Clicks inside the tutor's chat panel (send button, input box) that the logger recorded as SMART/UI clicks.
+    They belong to the request, not to the simulation (mock-review fix, 2026-11-22). Needs d sorted by session/time."""
+    cls = d.target_class.astype(str)
+    nxt_user = d.groupby("session_id").click_type.shift(-1).eq("CHAT") & d.groupby("session_id").target_tag.shift(-1).eq("USER")
+    gap = (d.groupby("session_id").timestamp.shift(-1) - d.timestamp).dt.total_seconds()
+    clicky = d.click_type.isin(["SMART_CLICK", "UI_CLICK"])
+    return clicky & (cls.str.contains(SEND_CLASS, regex=False) | cls.str.startswith(CHAT_INPUT_CLASS)
+                     | (d.target_tag.eq("BUTTON") & nxt_user & (gap < 0.05)))
 
 
 def load_logs():
@@ -66,6 +86,9 @@ def load_logs():
     d = pd.read_csv(DATA / "user_logs_consented.csv")
     d["timestamp"] = pd.to_datetime(d.timestamp, utc=True, format="ISO8601")
     d = d.sort_values(["session_id", "timestamp"], kind="stable").reset_index(drop=True)
+    ui = chat_ui_clicks(d); n_ui = int(ui.sum()); n_all = len(d)
+    d = d[~ui].reset_index(drop=True)                # chat-panel clicks are merged into the request they belong to
+    d.attrs.update(chat_ui_clicks=n_ui, events_extract=n_all)
     chat = d.click_type.eq("CHAT"); user = chat & d.target_tag.eq("USER"); bot = chat & d.target_tag.eq("BOT")
     auth = d.click_type.eq("CUSTOM_EVENT") & d.target_tag.eq("auth"); glob = d.click_type.eq("GLOBAL_CLICK")
     d["c4"] = np.select([d.click_type.isin(["SMART_CLICK", "UI_CLICK", "CUSTOM_EVENT"]), user, bot, glob], list("MUBG"), "X")

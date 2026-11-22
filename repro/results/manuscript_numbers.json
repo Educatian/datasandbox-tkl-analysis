@@ -63,8 +63,8 @@
   },
   {
    "id": "sample.events",
-   "where": "Setting; Table 1 note",
-   "value": "6726"
+   "where": "Data and Event Coding; Table 1 note (after merging chat-panel clicks)",
+   "value": "6647"
   },
   {
    "id": "sample.sessions",
@@ -98,8 +98,8 @@
   },
   {
    "id": "sample.events_per_learner_max",
-   "where": "Setting",
-   "value": "835"
+   "where": "Setting; Figure 1 (after merging chat-panel clicks)",
+   "value": "827"
   },
   {
    "id": "sample.sessions_per_learner_min",
@@ -124,7 +124,7 @@
   {
    "id": "table1.M",
    "where": "Table 1",
-   "value": "4125"
+   "value": "4046"
   },
   {
    "id": "table1.G",
@@ -149,12 +149,12 @@
   {
    "id": "table1.R",
    "where": "Table 1; Data and Event Coding",
-   "value": "40"
+   "value": "44"
   },
   {
    "id": "table1.T",
    "where": "Table 1; Figure 6 note",
-   "value": "364"
+   "value": "360"
   },
   {
    "id": "jev.n",
@@ -224,7 +224,7 @@
   {
    "id": "lsa.transitions",
    "where": "Data Analysis; Figure 7 note",
-   "value": "6654"
+   "value": "6575"
   },
   {
    "id": "gee.dropped_modules",
@@ -417,29 +417,24 @@
    "value": "30"
   },
   {
-   "id": "fig6.U_prev_M_pct",
-   "where": "RQ3 (98% of cases)",
-   "value": "98"
-  },
-  {
    "id": "fig6.U_prev_M_n",
    "where": "RQ3 (44 of 45)",
-   "value": "44"
+   "value": "13"
   },
   {
    "id": "fig6.U_prev_nav_login",
    "where": "RQ3 (navigation and login events were absent at that lag)",
-   "value": "0"
+   "value": "4"
   },
   {
    "id": "fig6.U_next_tutor_pct",
    "where": "RQ3 (89% of cases)",
-   "value": "89"
+   "value": "93"
   },
   {
    "id": "fig6.U_plus2_M_pct",
    "where": "RQ3 (69% of events)",
-   "value": "69"
+   "value": "26"
   },
   {
    "id": "fig6.T_prev_M_pct",
@@ -449,52 +444,47 @@
   {
    "id": "fig6.T_plus2_tutor_pct",
    "where": "RQ3 (49%)",
-   "value": "49"
+   "value": "51"
   },
   {
    "id": "fig6.base_M_pct",
    "where": "Figure 6 note (61.3%)",
-   "value": "61.3"
-  },
-  {
-   "id": "next.U_reply_pct",
-   "where": "RQ3 (88.9% were followed directly by a tutor reply)",
-   "value": "88.9"
+   "value": "60.9"
   },
   {
    "id": "next.R_n",
    "where": "RQ3; Figure 7 note; ESM S1 note",
-   "value": "37"
+   "value": "41"
   },
   {
    "id": "next.R_M_pct",
    "where": "RQ3 (78.4%)",
-   "value": "78.4"
+   "value": "26.8"
   },
   {
    "id": "next.base_pct",
    "where": "RQ3; ESM S1 note (62.0%)",
-   "value": "62.0"
+   "value": "61.5"
   },
   {
    "id": "next.R_z",
    "where": "RQ3",
-   "value": "2.06"
+   "value": "-4.58"
   },
   {
    "id": "next.T_n",
    "where": "RQ3; Figure 7 note",
-   "value": "361"
+   "value": "357"
   },
   {
    "id": "next.T_M_pct",
    "where": "RQ3 (77.8%)",
-   "value": "77.8"
+   "value": "76.2"
   },
   {
    "id": "next.T_z",
    "where": "RQ3",
-   "value": "6.38"
+   "value": "5.85"
   },
   {
    "id": "next.R_ended_session",
@@ -504,62 +494,62 @@
   {
    "id": "return.R_5_pct",
    "where": "RQ3 (91.9%)",
-   "value": "91.9"
+   "value": "58.5"
   },
   {
    "id": "return.T_5_pct",
    "where": "RQ3 (96.1%)",
-   "value": "96.1"
+   "value": "94.7"
   },
   {
    "id": "t3.pre",
    "where": "RQ3",
-   "value": ".60"
+   "value": ".51"
   },
   {
    "id": "t3.post",
    "where": "RQ3",
-   "value": ".67"
+   "value": ".58"
   },
   {
    "id": "t3.sessions",
    "where": "RQ3",
-   "value": "14"
+   "value": "12"
   },
   {
    "id": "t3.W",
    "where": "RQ3",
-   "value": "39"
+   "value": "30"
   },
   {
    "id": "t3.p",
    "where": "RQ3",
-   "value": ".43"
+   "value": ".52"
   },
   {
    "id": "gee.OR",
    "where": "RQ3",
-   "value": "0.70"
+   "value": "0.56"
   },
   {
    "id": "gee.lo",
    "where": "RQ3",
-   "value": "0.45"
+   "value": "0.33"
   },
   {
    "id": "gee.hi",
    "where": "RQ3",
-   "value": "1.09"
+   "value": "0.94"
   },
   {
    "id": "gee.p",
    "where": "RQ3",
-   "value": ".12"
+   "value": ".03"
   },
   {
    "id": "gee.events",
    "where": "RQ3",
-   "value": "4597"
+   "value": "4518"
   },
   {
    "id": "spec.models",
@@ -569,7 +559,7 @@
   {
    "id": "spec.intervals_including_1",
    "where": "RQ3 (every interval ... included 1)",
-   "value": "8"
+   "value": "6"
   },
   {
    "id": "spec.converged",
@@ -579,32 +569,32 @@
   {
    "id": "earlier.base_pct",
    "where": "RQ3; ESM S1 note (81.3%); Discussion (81%)",
-   "value": "81.3"
+   "value": "81.0"
   },
   {
    "id": "earlier.R_M_pct",
    "where": "RQ3 (81.1%)",
-   "value": "81.1"
+   "value": "29.3"
   },
   {
    "id": "earlier.T_M_pct",
    "where": "RQ3 (82.3%)",
-   "value": "82.3"
+   "value": "80.7"
   },
   {
    "id": "earlier.R_z",
    "where": "RQ3",
-   "value": "-0.03"
+   "value": "-8.48"
   },
   {
    "id": "earlier.T_z",
    "where": "RQ3",
-   "value": "0.51"
+   "value": "-0.18"
   },
   {
    "id": "s3.transitions_with_request",
    "where": "ESM S3 note",
-   "value": "2057"
+   "value": "1978"
   },
   {
    "id": "s3.transitions_without_request",
@@ -854,67 +844,57 @@
   {
    "id": "esm.max_rho",
    "where": "ESM Note 1 (largest correlation .62)",
-   "value": ".62"
+   "value": ".61"
   },
   {
    "id": "rev.MM_pct",
    "where": "RQ3 continuation baseline (83.2%)",
-   "value": "83.2"
+   "value": "83.7"
   },
   {
    "id": "rev.MM_lo",
    "where": "RQ3 (95% CI [76.5",
-   "value": "76.5"
+   "value": "77.1"
   },
   {
    "id": "rev.MM_hi",
    "where": "RQ3 (87.4])",
-   "value": "87.4"
+   "value": "87.8"
   },
   {
    "id": "rev.R_lo",
    "where": "RQ3 replies [59.5",
-   "value": "59.5"
+   "value": "9.8"
   },
   {
    "id": "rev.R_hi",
    "where": "RQ3 replies 92.6]",
-   "value": "92.6"
+   "value": "55.2"
   },
   {
    "id": "rev.T_lo",
    "where": "RQ3 tutor-initiated [71.9",
-   "value": "71.9"
+   "value": "69.6"
   },
   {
    "id": "rev.T_hi",
    "where": "RQ3 tutor-initiated 82.0]",
-   "value": "82.0"
-  },
-  {
-   "id": "rev.sec_R",
-   "where": "RQ3 median 14 s after a reply",
-   "value": "14"
-  },
-  {
-   "id": "rev.sec_T",
-   "where": "RQ3 2 s after a tutor-initiated message",
-   "value": "2"
+   "value": "80.8"
   },
   {
    "id": "rev.T_state_pct",
    "where": "RQ3 state-triggered 81.3%",
-   "value": "81.3"
+   "value": "79.8"
   },
   {
    "id": "rev.T_state_n",
    "where": "RQ3 n = 316",
-   "value": "316"
+   "value": "312"
   },
   {
    "id": "rev.T_welcome_pct",
    "where": "RQ3 welcome 53.3%",
-   "value": "53.3"
+   "value": "51.1"
   },
   {
    "id": "rev.T_welcome_n",
@@ -924,12 +904,12 @@
   {
    "id": "rev.top3_reply_n",
    "where": "RQ3 without top 3: of 12 replies",
-   "value": "12"
+   "value": "14"
   },
   {
    "id": "rev.top3_reply_M",
    "where": "RQ3 without top 3: 8 of 12",
-   "value": "8"
+   "value": "7"
   },
   {
    "id": "rev.entry_median",
@@ -954,42 +934,83 @@
   {
    "id": "rev.lag_nav_pct",
    "where": "RQ3 lags 3-10 navigation 30%",
-   "value": "30"
-  },
-  {
-   "id": "rev.lag_req_pct",
-   "where": "RQ3 further requests 12%",
-   "value": "12"
+   "value": "34"
   },
   {
    "id": "rev.lag_login_pct",
    "where": "RQ3 login or logout 10%",
-   "value": "10"
+   "value": "14"
   },
   {
    "id": "rev.windows_truncated",
    "where": "RQ3 10 of the 45 windows",
-   "value": "10"
+   "value": "13"
   },
   {
    "id": "rev.no_reply",
    "where": "RQ3 after the other five",
-   "value": "5"
+   "value": "3"
   },
   {
    "id": "rev.spec_or_min",
    "where": "RQ3 ORs 0.61",
-   "value": "0.61"
+   "value": "0.54"
   },
   {
    "id": "rev.spec_or_max",
    "where": "RQ3 ORs 0.89",
-   "value": "0.89"
+   "value": "0.77"
   },
   {
    "id": "rev.instrumental_pct",
    "where": "RQ2 42% of requests",
    "value": "42"
+  },
+  {
+   "id": "sample.events_extract",
+   "where": "Setting (6,726 events in the extract)",
+   "value": "6726",
+   "external": "extract before merging chat-panel clicks"
+  },
+  {
+   "id": "epi.n",
+   "where": "RQ3 (24 dialogues)",
+   "value": "24"
+  },
+  {
+   "id": "epi.multi",
+   "where": "RQ3 (nine of them with several requests)",
+   "value": "9"
+  },
+  {
+   "id": "epi.max",
+   "where": "RQ3 (up to five)",
+   "value": "5"
+  },
+  {
+   "id": "epi.reply_then_request",
+   "where": "RQ3; Abstract (21 of the 44 replies followed by another request)",
+   "value": "21"
+  },
+  {
+   "id": "epi.start_M",
+   "where": "RQ3 (began after a manipulation in 13 cases)",
+   "value": "13"
+  },
+  {
+   "id": "epi.start_T",
+   "where": "RQ3 (after a scripted tutor message in 7)",
+   "value": "7"
+  },
+  {
+   "id": "epi.start_G",
+   "where": "RQ3 (after navigation in 4)",
+   "value": "4"
+  },
+  {
+   "id": "epi.return",
+   "where": "RQ3; Abstract; Discussion (18 of the 24 dialogues)",
+   "value": "18"
   }
  ]
 }

@@ -84,5 +84,21 @@ R["module_entry_to_first_request_min"] = {"n_visits_with_request": int(len(rows)
                                           "iqr": [round(float(np.quantile(rows, .25)), 2), round(float(np.quantile(rows, .75)), 2)],
                                           "share_within_5min": round(float((rows <= 5).mean()), 3)}
 R["n_module_visits"] = int(d[d.page.ne("portal")].visit.nunique())
+
+# Help episodes (RQ3): maximal runs of learner requests and tutor replies within a session.
+d["prv"] = d.groupby("session_id").c.shift()
+d["ep"] = (~d.c.isin(["U", "R"])).cumsum()
+E = d[d.c.isin(["U", "R"])]
+ep_req = E[E.c.eq("U")].groupby(["session_id", "ep"]).size()
+starts = d[d.c.eq("U") & ~d.prv.isin(["U", "R"])]
+hit5 = n_ep = 0
+for (s, e), g in E.groupby(["session_id", "ep"]):
+    if not g.c.eq("U").any(): continue           # a delayed reply alone is part of the preceding dialogue
+    pos =d.index.get_loc(g.index[-1]); nxt = d.iloc[pos + 1:pos + 6]; nxt = nxt[nxt.session_id.eq(s)]
+    n_ep += 1; hit5 += int(nxt.c.eq("M").any())
+R["episodes"] = {"n": int(len(ep_req)), "requests_per_episode_max": int(ep_req.max()), "multi_request": int((ep_req > 1).sum()),
+                 "reply_then_request": int((d.c.eq("R") & d.nxt.eq("U")).sum()), "n_reply": int(d.c.eq("R").sum()),
+                 "start_prev": starts.prv.fillna("START").value_counts().to_dict(), "M_within5_after_end": hit5, "n_with_end": n_ep}
+R["request_prev_code"] = d[d.c.eq("U")].prv.fillna("START").value_counts().to_dict()
 dump(R, RESULTS / "review_r1.json")
 import json; print(json.dumps(R, indent=1))

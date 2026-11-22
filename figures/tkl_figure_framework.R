@@ -13,12 +13,12 @@ box <- function(col, lane, label, lty = "solid", fill = "white", bold = FALSE, t
 B <- bind_rows(
   box("units", "RQ1", "Sessions (n = 72; 57 in the\nsurvival frame)\nLearner requests (n = 45)\n16 modules \u00d7 4 course weeks;\ntiming from module entry"),
   box("units", "RQ2", "Request messages (n = 45)\nfrom 10 requesters\nLearners (n = 15)"),
-  box("units", "RQ3", "Lag-1 transitions (n = 6,654)\nReplies (n = 40) vs. tutor-\ninitiated messages (n = 364)\nModule-page events\n(n = 4,597) in 15 learners"),
+  box("units", "RQ3", "Lag-1 transitions (n = 6,575)\nReplies (n = 44) vs. tutor-\ninitiated messages (n = 360)\nHelp dialogues (n = 24)\nModule-page events\n(n = 4,518) in 15 learners"),
   box("an", "RQ1", "Kaplan\u2013Meier time to\nfirst request\nModule \u00d7 week request map", tag = "Descriptive"),
   box("an", "RQ2", "Content coding (7 codes;\nsecond coder, \u03ba = .88)", tag = "Descriptive"),
   box("an", "RQ3", "Lag-sequential analysis, split\nby reply vs. tutor-initiated;\ncontinuation baseline\nReturn curve; peri-request profile\nGEE, module fixed effects", lty = "22", tag = "Descriptive + associational"),
   box("rq", "RQ1", "RQ1\nTask contexts and phases\nof help seeking", fill = fill0, bold = TRUE),
-  box("rq", "RQ2", "RQ2\nInstrumental and executive\nforms of requests", fill = fill0, bold = TRUE),
+  box("rq", "RQ2", "RQ2\nRequests seeking under-\nstanding vs. task completion", fill = fill0, bold = TRUE),
   box("rq", "RQ3", "RQ3\nReturn to exploration after\nrequested vs. unsolicited\nsupport", fill = fill0, bold = TRUE),
   box("goal", "RQ1", "Help seeking as a task-\nlocated regulation decision\nunder impasse"),
   box("goal", "RQ2", "Instrumental vs. executive\nhelp seeking"),
@@ -27,7 +27,7 @@ B <- bind_rows(
 # context unit (survey) and ESM branch, converging box
 ctx <- tibble(x = cx[["units"]], y = -0.55, w = w[["units"]], h = 0.95, label = "Survey: 33 responses from\n13 learners, 3 class sessions", lty = "solid", fill = "white", bold = FALSE, tag = NA)
 esm <- tibble(x = cx[["an"]], y = -0.55, w = w[["an"]], h = 0.95, label = "ESM: specification curve (8 models),\nalternative vs. corrected coding,\ntransition networks", lty = "solid", fill = "white", bold = FALSE, tag = NA)
-conv <- tibble(x = 9.475, y = -0.55, w = 5.55, h = 0.95, label = "Optional GenAI help paused exploration only briefly: requests were\ntask-located, and learners resumed after requested and scripted\nsupport about as often as manipulation otherwise continued", lty = "solid", fill = fill0, bold = TRUE, tag = NA)
+conv <- tibble(x = 9.475, y = -0.55, w = 5.55, h = 0.95, label = "Requested GenAI help paused manipulation for short dialogues, and\nsessions with requests held less manipulation; scripted messages\ntied to the learner's actions barely interrupted it", lty = "solid", fill = fill0, bold = TRUE, tag = NA)
 AllB <- bind_rows(B, ctx, esm, conv)
 edge <- function(x1, y1, x2, y2, lt = "solid", col = ink) tibble(x = x1, y = y1, xend = x2, yend = y2, lt = lt, col = col)
 E <- bind_rows(lapply(names(ly), function(l) bind_rows(

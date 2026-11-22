@@ -1,6 +1,6 @@
 # DataSandbox GenAI help-seeking analysis
 
-Analysis code for the manuscript *Asking Without Stopping: Optional Generative AI Help as a Detour Within, Not a Substitute for, Simulation-Based Exploration*. The code turns DataSandbox interaction logs, coded tutor requests, an end-of-session survey and course grades into every number, table and figure reported in the manuscript and its supplementary material. The analyses include time-to-first-request survival, lag-sequential analysis, module-adjusted GEE models, and the specification curve.
+Analysis code for the manuscript *Pausing to Ask: Help-Seeking Dialogues With an Optional Generative AI Tutor in Manipulative Statistics Simulations*. The code turns DataSandbox interaction logs, coded tutor requests, an end-of-session survey and course grades into every number, table and figure reported in the manuscript and its supplementary material. The analyses include time-to-first-request survival, lag-sequential analysis, module-adjusted GEE models, and the specification curve.
 
 ## Data
 
@@ -24,7 +24,8 @@ Requirements:
 
 | Code | Manuscript |
 |---|---|
-| `common.py` | Event codes (Table 1), split of tutor messages into replies and tutor-initiated messages, lag-sequential and GEE helpers |
+| `common.py` | Event codes (Table 1; clicks inside the chat panel are merged into the request they belong to), reply matching (first tutor message after an unanswered request), lag-sequential and GEE helpers |
+| `review_r1_analyses.py` | RQ3 help dialogues, continuation baseline with learner-resampled intervals, welcome vs. state-triggered messages; RQ1 timing from module entry |
 | `build_extract.py` | Consent and time-window filter (Setting and Participants) |
 | `reanalysis.py` | Sample counts, Table 1, RQ1 survival and request counts, Table 2, profiles, RQ3 before/after test |
 | `sensitivity.py` | RQ3 adjusted residuals, primary GEE, earlier-coding checks, fixed-effects logit (ESM Figures S1–S2) |
