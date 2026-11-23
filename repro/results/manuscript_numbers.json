@@ -114,7 +114,7 @@
   {
    "id": "sample.class_day_pct",
    "where": "Setting (86% of the logged events)",
-   "value": "86"
+   "value": "86.2"
   },
   {
    "id": "fig1.learner_rows",
@@ -444,22 +444,22 @@
   {
    "id": "fig6.U_next_tutor_pct",
    "where": "RQ3 (89% of cases)",
-   "value": "93"
+   "value": "93.3"
   },
   {
    "id": "fig6.U_plus2_M_pct",
    "where": "RQ3 (69% of events)",
-   "value": "26"
+   "value": "26.2"
   },
   {
    "id": "fig6.T_prev_M_pct",
    "where": "RQ3 (82% at the preceding event)",
-   "value": "82"
+   "value": "82.2"
   },
   {
    "id": "fig6.T_plus2_tutor_pct",
    "where": "RQ3 (49%)",
-   "value": "51"
+   "value": "51.1"
   },
   {
    "id": "fig6.base_M_pct",
@@ -519,12 +519,12 @@
   {
    "id": "t3.pre",
    "where": "RQ3",
-   "value": ".51"
+   "value": "51.0"
   },
   {
    "id": "t3.post",
    "where": "RQ3",
-   "value": ".58"
+   "value": "58.4"
   },
   {
    "id": "t3.sessions",
@@ -929,17 +929,17 @@
   {
    "id": "rev.entry_median",
    "where": "RQ1 median 1.1 min from module entry",
-   "value": "1.1"
+   "value": "1.08"
   },
   {
    "id": "rev.entry_iqr_lo",
    "where": "RQ1 IQR 0.6",
-   "value": "0.6"
+   "value": "0.63"
   },
   {
    "id": "rev.entry_iqr_hi",
    "where": "RQ1 IQR 2.2",
-   "value": "2.2"
+   "value": "2.15"
   },
   {
    "id": "rev.entry_visits",
@@ -949,12 +949,12 @@
   {
    "id": "rev.lag_nav_pct",
    "where": "RQ3 lags 3-10 navigation 30%",
-   "value": "34"
+   "value": "34.0"
   },
   {
    "id": "rev.lag_login_pct",
    "where": "RQ3 login or logout 10%",
-   "value": "14"
+   "value": "13.5"
   },
   {
    "id": "rev.windows_truncated",
@@ -979,7 +979,7 @@
   {
    "id": "rev.instrumental_pct",
    "where": "RQ2 42% of requests",
-   "value": "44"
+   "value": "44.4"
   },
   {
    "id": "sample.events_extract",

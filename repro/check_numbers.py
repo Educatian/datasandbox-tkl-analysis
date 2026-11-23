@@ -82,7 +82,7 @@ C |= {"next.U_reply_pct": 100 * key("corrected_split", "U", "R", "p_next"), "nex
       "next.R_ended_session": c["R"] - key("corrected_split", "R", "M", "n_from"),
       "return.R_5_pct": 100 * float(ret.query("source.str.startswith('Reply') and k == 5", engine="python").share.iloc[0]),
       "return.T_5_pct": 100 * float(ret.query("source.str.startswith('Tutor') and k == 5", engine="python").share.iloc[0])}
-C |= {"t3.pre": ra["T3"]["pre"], "t3.post": ra["T3"]["post"], "t3.sessions": ra["T3"]["n_sessions"], "t3.W": ra["T3"]["W"], "t3.p": ra["T3"]["p"],
+C |= {"t3.pre": 100 * ra["T3"]["pre"], "t3.post": 100 * ra["T3"]["post"], "t3.sessions": ra["T3"]["n_sessions"], "t3.W": ra["T3"]["W"], "t3.p": ra["T3"]["p"],
       "gee.OR": prim.OR, "gee.lo": prim.lo_bias_reduced, "gee.hi": prim.hi_bias_reduced, "gee.p": prim.p_bias_reduced, "gee.events": prim.n_events,
       "spec.models": len(forest), "spec.intervals_including_1": int(((forest.lo < 1) & (forest.hi > 1)).sum()), "spec.converged": int(forest.converged.sum())}
 C |= {"earlier.base_pct": 100 * float(tr[tr.scheme == "Earlier coding"].base.iloc[0]),
