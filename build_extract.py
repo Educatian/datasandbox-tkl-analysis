@@ -9,7 +9,7 @@ Inputs : RAW_LOGS, RAW_CODES, data/survey_raw.csv. Outputs: data/user_logs_conse
 data/manual_chat_codes_consented.csv (45 coded requests), data/survey_consented.csv (33 responses). Raw rows stay in data/.
 """
 import pandas as pd
-from common import DATA, RAW_CODES, RAW_LOGS, TZ, crosswalk, suffix
+from common import CODE_ADJ, DATA, RAW_CODES, RAW_LOGS, TZ, crosswalk, suffix
 
 cw = crosswalk(); CONSENT = set(cw["consent_suffixes"]); start = pd.Timestamp(cw["window_start"]).date()
 local_date = lambda ts: pd.to_datetime(ts, utc=True, format="ISO8601").dt.tz_convert(TZ).dt.date
@@ -23,7 +23,15 @@ k.to_csv(DATA / "user_logs_consented.csv", index=False)
 # Codes: same consent + window rule (no coded request falls on the test day; asserted so a new extract cannot leak one).
 codes = pd.read_csv(RAW_CODES); cs = codes.user.map(suffix); cday = local_date(codes.timestamp)
 ckeep = cs.isin(CONSENT) & (cday >= start) & ~((cs == cw["test_account_suffix"]) & (cday == pd.Timestamp(cw["test_day"]).date()))
-codes[ckeep].to_csv(DATA / "manual_chat_codes_consented.csv", index=False)
+# Final codes = the first author's verified codes (CODE_ADJ: approve or replace each AI-assisted first code);
+# the first code is kept as first_code for the second-coder agreement. Every consented request must be adjudicated.
+# Keyed by raw row (timestamps have minute resolution); user, timestamp and first code are checked too.
+codes["row"] = range(len(codes)); codes = codes[ckeep].rename(columns={"code": "first_code"})
+adj = pd.read_csv(CODE_ADJ)[["row", "user", "timestamp", "first_code", "final_code"]]
+codes = codes.merge(adj, on=["row", "user", "timestamp", "first_code"], how="left", validate="one_to_one").drop(columns="row")
+assert codes.final_code.notna().all() and len(adj) == len(codes), "every consented request needs exactly one adjudicated code"
+codes.insert(codes.columns.get_loc("first_code"), "code", codes.pop("final_code"))
+codes.to_csv(DATA / "manual_chat_codes_consented.csv", index=False)
 n_req = int((k.click_type.eq("CHAT") & k.target_tag.eq("USER")).sum())
 assert int(ckeep.sum()) == n_req, ("coded requests != logged requests", int(ckeep.sum()), n_req)
 

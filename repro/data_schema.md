@@ -10,6 +10,7 @@ Participant data are not distributed. The pipeline reads the files below.
 | `manual_chat_codes.csv` | learner request | `user`, `timestamp` (UTC, minute resolution), `page`, `code` (primary content code), `subcode`, `message` (chat text, never leaves `data/`) |
 | `provisional_crosswalk_analysis_pseudonymized.csv` | learner | `participant` (`Pk` = k-th account number in `log_account_suffixes`), `Current Score`, `Final Score`, `Exams Final Score`, `Assignments Final Score` |
 | `jev_second_coder_log.csv` | learner request | `row` (0-based row index into `manual_chat_codes.csv`), `jev_code` (AI second coder, blind to everything but the text) |
+| `code_adjudication.csv` | learner request | `row` (0-based row index into `manual_chat_codes.csv`), `user`, `timestamp` (as in `manual_chat_codes.csv`), `first_code` (AI-assisted first code), `final_code` (after the first author's verification; the code used in all analyses) |
 
 ## Local files in `data/` (gitignored)
 

@@ -19,6 +19,7 @@ RAW_LOGS = env("TKL_RAW_LOGS", "data/raw/user_logs_participants.csv")
 RAW_CODES = env("TKL_RAW_CODES", "data/raw/manual_chat_codes.csv")
 GRADES = env("TKL_GRADES", "data/raw/provisional_crosswalk_analysis_pseudonymized.csv")
 JEV_LOG = env("TKL_JEV_LOG", "data/raw/jev_second_coder_log.csv")
+CODE_ADJ = env("TKL_CODE_ADJ", "data/raw/code_adjudication.csv")  # first author's verification: row (raw code row), user, timestamp, first_code, final_code
 SEED = int(os.environ.get("TKL_SEED", 20261121))  # every bootstrap draws from np.random.default_rng(SEED)
 TZ = "America/Denver"                             # course time zone; dates and weeks are local (Mountain) time
 NON_OUTCOME = ["U", "R", "T", "S"]                # chat + system codes, never in a manipulation denominator
@@ -32,7 +33,7 @@ def crosswalk():
 
 
 def suffix(v):
-    """Account number from 'datasandboxN@...' or a typed 'sandboxdataN' ID; None if absent."""
+    """Trailing account number of a log account or a typed login ID; None if absent."""
     s = str(v).strip().split("@")[0]
     digits = s[len(s.rstrip("0123456789")):]
     return int(digits) if digits else None

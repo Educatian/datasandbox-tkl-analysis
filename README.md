@@ -31,7 +31,7 @@ Requirements:
 | `sensitivity.py` | RQ3 adjusted residuals, primary GEE, earlier-coding checks, fixed-effects logit (ESM Figures S1–S2) |
 | `survey.py` | Learners' Perceptions; ESM Table S1 |
 | `esm_outcome.py` | ESM Supplementary Note 1 |
-| `jev_agreement_consent16.py` | Second-coder agreement (Data and Event Coding) |
+| `jev_agreement_consent16.py` | Second-coder agreement and the first author's verification of the content codes (Data and Event Coding) |
 | `figures/` | Figures 1 and 3–7 and ESM Figures S1–S3 (R); Figure 2 is built from interface screenshots (`figures/interface/`) |
 | `independent_check.py` | Independent re-implementation of the headline numbers |
 

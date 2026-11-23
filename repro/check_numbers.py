@@ -38,7 +38,9 @@ C |= {"sample.learners": s["learners"], "sample.events": s["events"], "sample.se
       "sample.class_day_pct": 100 * s["class_day_share"], "fig1.learner_rows": len(F("figB_learner_totals.csv"))}
 C |= {f"table1.{k}": c[k] for k in "MGPSURT"}
 C |= {"earlier.reclassified_as_M": sum(ra["reclassified_from_earlier_M"].values()), "earlier.tutor_messages": ra["counts_earlier"]["B"],
-      "jev.n": jev["n"], "jev.agreement_pct": 100 * jev["agreement"], "jev.kappa": jev["kappa"], "jev.ci_lo": jev["ci"][0], "jev.ci_hi": jev["ci"][1]}
+      "jev.n": jev["n"], "jev.agreement_pct": 100 * jev["agreement"], "jev.kappa": jev["kappa"], "jev.ci_lo": jev["ci"][0], "jev.ci_hi": jev["ci"][1],
+      "verif.kept": jev["verification"]["kept"], "verif.changed": jev["verification"]["changed"],
+      "verif.changed_to_jev": jev["verification"]["changed_to_jev_code"], "jev.disagreements": jev["disagreements"]}
 C |= {"km.sessions": km["n_sessions"], "km.events": km["n_events"], "km.at_risk_30": km["at_risk_30"], "km.conditional_median": km["conditional_median_min"],
       "km.iqr_lo": km["iqr_min"][0], "km.iqr_hi": km["iqr_min"][1], "km.S10_pct": 100 * km["S10"], "km.S5": km["S5"]}
 C |= {"lsa.transitions": int(comp[comp.source.str.startswith("All")].n.sum()), "gee.dropped_modules": int(len(tot) - prim.n_pages),

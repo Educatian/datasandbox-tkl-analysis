@@ -182,6 +182,21 @@
    "value": ".97"
   },
   {
+   "id": "verif.kept",
+   "where": "Data and Event Coding",
+   "value": "42"
+  },
+  {
+   "id": "verif.changed",
+   "where": "Data and Event Coding",
+   "value": "3"
+  },
+  {
+   "id": "jev.disagreements",
+   "where": "Data and Event Coding (3 of the 4 changed)",
+   "value": "4"
+  },
+  {
    "id": "km.sessions",
    "where": "Data Analysis; RQ1; Figure 4 note",
    "value": "57"
@@ -314,27 +329,27 @@
   {
    "id": "table2.frustration.n",
    "where": "Table 2; RQ2",
-   "value": "10"
+   "value": "8"
   },
   {
    "id": "table2.frustration.pct",
    "where": "Table 2; RQ2 (22%)",
-   "value": "22.2"
+   "value": "17.8"
   },
   {
    "id": "table2.frustration.learners",
-   "where": "Table 2; RQ2 (two wrote all 10)",
+   "where": "Table 2; RQ2 (two wrote all 8)",
    "value": "2"
   },
   {
    "id": "table2.off-topic.n",
    "where": "Table 2",
-   "value": "7"
+   "value": "8"
   },
   {
    "id": "table2.off-topic.pct",
    "where": "Table 2",
-   "value": "15.6"
+   "value": "17.8"
   },
   {
    "id": "table2.off-topic.learners",
@@ -359,12 +374,12 @@
   {
    "id": "table2.clarification.n",
    "where": "Table 2",
-   "value": "1"
+   "value": "2"
   },
   {
    "id": "table2.clarification.pct",
    "where": "Table 2",
-   "value": "2.2"
+   "value": "4.4"
   },
   {
    "id": "table2.clarification.learners",
@@ -964,7 +979,7 @@
   {
    "id": "rev.instrumental_pct",
    "where": "RQ2 42% of requests",
-   "value": "42"
+   "value": "44"
   },
   {
    "id": "sample.events_extract",

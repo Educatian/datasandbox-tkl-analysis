@@ -34,7 +34,7 @@ R 4.5.2 must be on PATH (or set `RSCRIPT`), with the packages in `sessionInfo.tx
 | `figures/tkl_figures_redesign.R` | Figure 5, Figure 7, Figure S2 | RQ1; RQ3; ESM |
 | `repro/check_numbers.py` | pass/fail | every data-derived number in `results/manuscript_numbers.json` |
 
-Verified on 2026-11-21 against the original data: `check_numbers.py` reported 171 of 171 data-derived numbers matching.
+Verified outputs from 2026-11-21: `results/run_all_output.txt` and `results/check_numbers_output.txt`.
 
 ## Not reproducible from this package
 
