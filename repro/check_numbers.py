@@ -103,6 +103,21 @@ C |= {"esm.n": esm["n"], "esm.n_tests": esm["n_tests"], "esm.rho": esm["rho"], "
       "esm.request_rate_min": rr_other.min(), "esm.request_rate_max": rr_other.max(), "esm.max_rho": esm["max_abs"]["rho"]}
 
 
+# ---- control-level (AOI) patterns: Online Resource 1 Note 4, RQ3 Findings ----
+A = HERE.parent / "results" / "aoi"
+if (A / "aoi_summary.json").exists():
+    s4 = json.load(open(A / "aoi_summary.json")); nv = json.load(open(A / "nav_in_M.json"))
+    pe = pd.read_csv(A / "patterns_peri.csv").set_index("source").loc["tutor-initiated"]
+    pmod = pd.read_csv(A / "patterns_module.csv")
+    C |= {"aoi.clicks": s4["clicks"], "aoi.class": s4["class"], "aoi.label": s4["label"], "aoi.xy": s4["xy_aoi"],
+          "aoi.resolved": s4["clicks"] - s4["unresolved"], "aoi.resolved_pct": 100 * (1 - s4["unresolved"] / s4["clicks"]),
+          "aoi.nav_in_M": nv["nav_in_M"], "aoi.M_events": nv["M_events"],
+          "aoi.repeat_min_pct": 100 * pmod.repeat_share.min(), "aoi.repeat_max_pct": 100 * pmod.repeat_share.max(),
+          "aoi.T_n": pe["n"], "aoi.T_learners": pe["learners"], "aoi.T_same_pct": 100 * pe["same_control"],
+          "aoi.T_base_pct": 100 * pe["base_same_in_module"], "aoi.T_diff_pp": 100 * pe["diff"],
+          "aoi.T_diff_lo": 100 * pe["diff_lo"], "aoi.T_diff_hi": 100 * pe["diff_hi"]}
+
+
 def match(got, printed):
     if re.fullmatch(r"-?\d*\.?\d+", printed) is None: return str(got) == printed   # versions, dates
     dp = len(printed.split(".")[1]) if "." in printed else 0

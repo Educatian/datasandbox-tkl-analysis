@@ -1026,6 +1026,91 @@
    "id": "epi.return",
    "where": "RQ3; Abstract; Discussion (18 of the 24 dialogues)",
    "value": "18"
+  },
+  {
+   "id": "aoi.clicks",
+   "where": "ESM Note 4",
+   "value": "3432"
+  },
+  {
+   "id": "aoi.class",
+   "where": "ESM Note 4",
+   "value": "1457"
+  },
+  {
+   "id": "aoi.label",
+   "where": "ESM Note 4",
+   "value": "1322"
+  },
+  {
+   "id": "aoi.xy",
+   "where": "ESM Note 4",
+   "value": "441"
+  },
+  {
+   "id": "aoi.resolved",
+   "where": "ESM Note 4",
+   "value": "3220"
+  },
+  {
+   "id": "aoi.resolved_pct",
+   "where": "ESM Note 4",
+   "value": "93.8"
+  },
+  {
+   "id": "aoi.nav_in_M",
+   "where": "ESM Note 4",
+   "value": "333"
+  },
+  {
+   "id": "aoi.M_events",
+   "where": "ESM Note 4",
+   "value": "4046"
+  },
+  {
+   "id": "aoi.repeat_min_pct",
+   "where": "ESM Note 4 (Rank line)",
+   "value": "20"
+  },
+  {
+   "id": "aoi.repeat_max_pct",
+   "where": "ESM Note 4",
+   "value": "100"
+  },
+  {
+   "id": "aoi.T_n",
+   "where": "ESM Note 4",
+   "value": "264"
+  },
+  {
+   "id": "aoi.T_learners",
+   "where": "ESM Note 4",
+   "value": "14"
+  },
+  {
+   "id": "aoi.T_same_pct",
+   "where": "RQ3; ESM Note 4",
+   "value": "50.0"
+  },
+  {
+   "id": "aoi.T_base_pct",
+   "where": "RQ3; ESM Note 4",
+   "value": "63.9"
+  },
+  {
+   "id": "aoi.T_diff_pp",
+   "where": "RQ3; ESM Note 4",
+   "value": "-13.9"
+  },
+  {
+   "id": "aoi.T_diff_lo",
+   "where": "RQ3; ESM Note 4",
+   "value": "-21.1"
+  },
+  {
+   "id": "aoi.T_diff_hi",
+   "where": "RQ3; ESM Note 4",
+   "value": "-3.8"
   }
  ]
 }
