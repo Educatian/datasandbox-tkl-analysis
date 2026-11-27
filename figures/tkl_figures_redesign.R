@@ -76,7 +76,7 @@ p3b <- ggplot(rc, aes(k, share, group = src)) +
   scale_shape_manual(values = c("Reply to a request" = 21, "Tutor-initiated" = 22, "Any event" = 4)) +
   scale_linetype_manual(values = c("Reply to a request" = "solid", "Tutor-initiated" = "solid", "Any event" = "22")) +
   scale_colour_manual(values = c("Reply to a request" = ink, "Tutor-initiated" = "#7B8494", "Any event" = mid)) +
-  scale_y_continuous(labels = percent, limits = c(0.2, 1), breaks = seq(0.2, 1, 0.2)) +
+  scale_y_continuous(labels = percent, limits = c(0, 1), breaks = seq(0, 1, 0.25)) +
   scale_x_continuous(breaks = 1:5, limits = c(1, 6.6), expand = expansion(add = c(0.25, 0))) +
   labs(x = "Events after the source event (k)", y = "Manipulation within k events", tag = "B") + theme_j()
 p3 <- p3a + p3b + plot_layout(widths = c(1.65, 1))
