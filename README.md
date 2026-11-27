@@ -32,7 +32,7 @@ Requirements:
 | `survey.py` | Learners' Perceptions; ESM Table S1 |
 | `esm_outcome.py` | ESM Supplementary Note 1 |
 | `jev_agreement_consent16.py` | Second-coder agreement and the first author's verification of the content codes (Data and Event Coding) |
-| `figures/` | Figures 1 and 3–7 and ESM Figures S1–S3 (R); Figure 2 is built from interface screenshots (`figures/interface/`) |
+| `figures/` | Figures 2–5 and Online Resource Figs. S1–S5 (R; Figure 5 = `tkl_figure_peri_combined.R`); Figure 1 is built from interface screenshots (`figures/interface/`) |
 | `robustness/multiverse.py` | RQ3 under all 32 combinations of five event-coding choices and leave-one-learner-out (Online Resource 1, Note 3 and Table S3); dialogue outcomes (return to manipulation or to the portal) |
 | `aoi/` | Control-level (AOI) patterns: control labels from the app source, button text and click coordinates matched to rendered screen regions; repetition, transitions and controls around tutor-initiated messages (Online Resource 1 Note 4, Fig. S4; RQ3). `control_codebook.py` and `heat_screens.py` need the February-2026 app source and a local build; their outputs are included under `results/aoi/` and `figures/interface/heat/` |
 | `independent_check.py` | Independent re-implementation of the headline numbers |

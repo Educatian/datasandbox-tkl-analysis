@@ -21,7 +21,7 @@ PY_STEPS = ["build_extract.py", "reanalysis.py", "sensitivity.py", "survey.py", 
             # control-level (AOI) patterns, Online Resource 1 Note 4 / Fig. S4. Rendered inputs (AOI boxes, interface screenshots)
             # are fixed files from the local Feb-2026 build: results/aoi/*_aoi.json, figures/interface/heat/*.png
             "robustness/multiverse.py", "aoi/control_codebook.py", "aoi/label_controls.py", "aoi/patterns.py", "aoi/heat_figdata.py"]
-R_STEPS = ["tkl_figures.R", "tkl_figures_redesign.R", "tkl_figures_new.R", "tkl_figure_framework.R", "tkl_figure_aoi.R"]  # cwd = figures/
+R_STEPS = ["tkl_figures.R", "tkl_figures_redesign.R", "tkl_figures_new.R", "tkl_figure_framework.R", "tkl_figure_aoi.R", "tkl_figure_peri_combined.R"]  # cwd = figures/
 # ----------------------------------------
 
 env = dict(os.environ, TKL_SEED=SEED, PYTHONUTF8="1")
