@@ -37,7 +37,7 @@ lsa_key = pd.DataFrame(rows); lsa_key.to_csv(RESULTS / "lsa_key_transitions.csv"
 # Feeds primary OR 0.70 [0.45, 1.09], p = .12, 4,597 events (bias-reduced SE).
 d["m_old"] = d.c4.eq("M").astype(int); d["m_new"] = d.c.eq("M").astype(int)
 nochat4 = d[~d.c4.isin(["U", "B"])]
-nochat7 = d[~d.c.isin(NON_OUTCOME)]; mod7 = nochat7[nochat7.page.ne("portal")]
+nochat7 = d[~d.c.isin(NON_OUTCOME)]; mod7 = nochat7[nochat7.page.ne("portal") & nochat7.c.isin(["M", "G"])]  # M vs G as described; back-button clicks (P on module pages, 2026-11-26 recode) stay out
 g = [gee(d, "m_old ~ sess_req", "A1 locked: all events, no FE"),
      gee(d, "m_old ~ sess_req + C(page)", "A2 locked: all events, page FE"),
      gee(nochat4, "m_old ~ sess_req", "B1 locked: chat excluded, no FE"),

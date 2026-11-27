@@ -118,6 +118,17 @@ if (A / "aoi_summary.json").exists():
           "aoi.T_diff_lo": 100 * pe["diff_lo"], "aoi.T_diff_hi": 100 * pe["diff_hi"]}
 
 
+# ---- coding multiverse, dialogue outcomes, leave-one-learner-out (robustness/multiverse.py; Online Resource 1 Note 3) ----
+R2 = HERE.parent / "results" / "robustness"
+if (R2 / "dialogue_summary.json").exists():
+    ds = json.load(open(R2 / "dialogue_summary.json"))
+    C |= {"recode.back": ds["back_clicks"], "dlg.n": ds["dialogues"], "dlg.ret5": ds["ret5"], "dlg.left5": ds["left5"],
+          "dlg.left_other": ds["left_then_other"], "dlg.left_pct": ds["left5_pct"], "dlg.leave_base_pct": ds["leave_base_pct"],
+          "mv.ret_lo": ds["ret5_range_unamb"][0], "mv.ret_hi": ds["ret5_range_unamb"][1], "rev.lag_M_pct": 100 * lag["Manipulation"]}
+    for k, (h, n_) in ds["claims"].items(): C[f"mv.{k}"] = h
+    for k, (lo_, hi_) in ds["jk"].items(): C[f"jk.{k}_lo"], C[f"jk.{k}_hi"] = lo_, hi_
+
+
 def match(got, printed):
     if re.fullmatch(r"-?\d*\.?\d+", printed) is None: return str(got) == printed   # versions, dates
     dp = len(printed.split(".")[1]) if "." in printed else 0

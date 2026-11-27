@@ -76,11 +76,15 @@ def chat_ui_clicks(d):
                      | (d.target_tag.eq("BUTTON") & nxt_user & (gap < 0.05)))
 
 
+BACK_ICON_CLASS = "p-3 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"  # icon-only back button
+
+
 def load_logs():
     """Consented extract, sorted within session by time (stable: tied timestamps keep extract order), with codes:
       c4  locked 2026-05-04 scheme  M = SMART/UI/CUSTOM click (any page, auth included), U, B, G = global click
       c4s c4 with B split into R/T
-      c7  corrected scheme before the split  U, B, S = auth custom event, G = global click, P = other portal event,
+      c7  corrected scheme before the split  U, B, S = auth custom event, G = global click, P = other portal event or a
+          click on a module's back-to-portal button,
           M = everything else (module-page simulation controls)
       c   corrected 7-code scheme of Table 1 (M, G, P, S, U, R, T)
     plus sess_req (1 if the session holds any learner request) and week (Mountain-time Monday)."""
@@ -93,7 +97,12 @@ def load_logs():
     chat = d.click_type.eq("CHAT"); user = chat & d.target_tag.eq("USER"); bot = chat & d.target_tag.eq("BOT")
     auth = d.click_type.eq("CUSTOM_EVENT") & d.target_tag.eq("auth"); glob = d.click_type.eq("GLOBAL_CLICK")
     d["c4"] = np.select([d.click_type.isin(["SMART_CLICK", "UI_CLICK", "CUSTOM_EVENT"]), user, bot, glob], list("MUBG"), "X")
-    d["c7"] = np.select([user, bot, auth, glob, d.page.eq("portal")], list("UBSGP"), "M")
+    # clicks on a module page's back button return to the portal: navigation (P), not manipulation (2026-11-26 recode)
+    lab = d.context_label.fillna("")
+    back = d.click_type.eq("SMART_CLICK") & d.target_tag.eq("BUTTON") & d.page.ne("portal") & (
+        lab.str.startswith("← Back to Portal") | lab.str.startswith("← Exit Simulation") | d.target_class.fillna("").eq(BACK_ICON_CLASS))
+    d.attrs.update(back_to_portal=int(back.sum()))
+    d["c7"] = np.select([user, bot, auth, glob, d.page.eq("portal") | back], list("UBSGP"), "M")
     d["c4s"] = split_tutor(d, "c4"); d["c"] = split_tutor(d, "c7")
     d["sess_req"] = d.groupby("session_id").c.transform(lambda s: int(s.eq("U").any()))
     d["week"] = week_mt(d.timestamp)

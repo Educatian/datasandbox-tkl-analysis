@@ -48,7 +48,7 @@ def label(r):
     p = pick(cands, r.context_label)
     if p: return p, "label"
     k = key(r.context_label)
-    if "backtoportal" in k or "exitsimulation" in k: return "← Back to Portal", "label"
+    if r.target_tag == "BUTTON" and ("backtoportal" in k or "exitsimulation" in k): return "← Back to Portal", "label"  # not page containers
     if r.page == "portal" and k.startswith("the"): return "Module card", "label"  # click inside a module card (card text)
     return None, "unresolved"
 

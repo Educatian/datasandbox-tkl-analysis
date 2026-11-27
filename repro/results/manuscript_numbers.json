@@ -124,7 +124,7 @@
   {
    "id": "table1.M",
    "where": "Table 1",
-   "value": "4046"
+   "value": "3845"
   },
   {
    "id": "table1.G",
@@ -134,7 +134,7 @@
   {
    "id": "table1.P",
    "where": "Table 1",
-   "value": "520"
+   "value": "721"
   },
   {
    "id": "table1.S",
@@ -449,7 +449,7 @@
   {
    "id": "fig6.U_plus2_M_pct",
    "where": "RQ3 (69% of events)",
-   "value": "26.2"
+   "value": "11.9"
   },
   {
    "id": "fig6.T_prev_M_pct",
@@ -464,7 +464,7 @@
   {
    "id": "fig6.base_M_pct",
    "where": "Figure 6 note (61.3%)",
-   "value": "60.9"
+   "value": "57.8"
   },
   {
    "id": "next.R_n",
@@ -474,17 +474,17 @@
   {
    "id": "next.R_M_pct",
    "where": "RQ3 (78.4%)",
-   "value": "26.8"
+   "value": "12.2"
   },
   {
    "id": "next.base_pct",
    "where": "RQ3; ESM S1 note (62.0%)",
-   "value": "61.5"
+   "value": "58.5"
   },
   {
    "id": "next.R_z",
    "where": "RQ3",
-   "value": "-4.58"
+   "value": "-6.03"
   },
   {
    "id": "next.T_n",
@@ -494,12 +494,12 @@
   {
    "id": "next.T_M_pct",
    "where": "RQ3 (77.8%)",
-   "value": "76.2"
+   "value": "68.1"
   },
   {
    "id": "next.T_z",
    "where": "RQ3",
-   "value": "5.85"
+   "value": "3.78"
   },
   {
    "id": "next.R_ended_session",
@@ -509,22 +509,22 @@
   {
    "id": "return.R_5_pct",
    "where": "RQ3 (91.9%)",
-   "value": "58.5"
+   "value": "26.8"
   },
   {
    "id": "return.T_5_pct",
    "where": "RQ3 (96.1%)",
-   "value": "94.7"
+   "value": "85.7"
   },
   {
    "id": "t3.pre",
    "where": "RQ3",
-   "value": "51.0"
+   "value": "49.5"
   },
   {
    "id": "t3.post",
    "where": "RQ3",
-   "value": "58.4"
+   "value": "48.3"
   },
   {
    "id": "t3.sessions",
@@ -534,37 +534,37 @@
   {
    "id": "t3.W",
    "where": "RQ3",
-   "value": "30"
+   "value": "38"
   },
   {
    "id": "t3.p",
    "where": "RQ3",
-   "value": ".52"
+   "value": ".97"
   },
   {
    "id": "gee.OR",
    "where": "RQ3",
-   "value": "0.56"
+   "value": "0.54"
   },
   {
    "id": "gee.lo",
    "where": "RQ3",
-   "value": "0.33"
+   "value": "0.30"
   },
   {
    "id": "gee.hi",
    "where": "RQ3",
-   "value": "0.94"
+   "value": "0.99"
   },
   {
    "id": "gee.p",
    "where": "RQ3",
-   "value": ".03"
+   "value": ".045"
   },
   {
    "id": "gee.events",
    "where": "RQ3",
-   "value": "4518"
+   "value": "4326"
   },
   {
    "id": "spec.models",
@@ -588,22 +588,22 @@
   },
   {
    "id": "earlier.R_M_pct",
-   "where": "RQ3 (81.1%)",
+   "where": "Online Resource 1, Fig. S1 (figure labels; removed from the text 2026-11-26)",
    "value": "29.3"
   },
   {
    "id": "earlier.T_M_pct",
-   "where": "RQ3 (82.3%)",
+   "where": "Online Resource 1, Fig. S1 (figure labels; removed from the text 2026-11-26)",
    "value": "80.7"
   },
   {
    "id": "earlier.R_z",
-   "where": "RQ3",
+   "where": "Online Resource 1, Fig. S1 (figure labels; removed from the text 2026-11-26)",
    "value": "-8.48"
   },
   {
    "id": "earlier.T_z",
-   "where": "RQ3",
+   "where": "Online Resource 1, Fig. S1 (figure labels; removed from the text 2026-11-26)",
    "value": "-0.18"
   },
   {
@@ -619,7 +619,7 @@
   {
    "id": "s3.max_incoming",
    "where": "ESM S3 note (0 to 2,931)",
-   "value": "2931"
+   "value": "2777"
   },
   {
    "id": "survey.learners",
@@ -864,42 +864,42 @@
   {
    "id": "rev.MM_pct",
    "where": "RQ3 continuation baseline (83.2%)",
-   "value": "83.7"
+   "value": "85.6"
   },
   {
    "id": "rev.MM_lo",
    "where": "RQ3 (95% CI [76.5",
-   "value": "77.1"
+   "value": "79.8"
   },
   {
    "id": "rev.MM_hi",
    "where": "RQ3 (87.4])",
-   "value": "87.8"
+   "value": "89.3"
   },
   {
    "id": "rev.R_lo",
    "where": "RQ3 replies [59.5",
-   "value": "9.8"
+   "value": "0.0"
   },
   {
    "id": "rev.R_hi",
    "where": "RQ3 replies 92.6]",
-   "value": "55.2"
+   "value": "30.8"
   },
   {
    "id": "rev.T_lo",
    "where": "RQ3 tutor-initiated [71.9",
-   "value": "69.6"
+   "value": "60.3"
   },
   {
    "id": "rev.T_hi",
    "where": "RQ3 tutor-initiated 82.0]",
-   "value": "80.8"
+   "value": "73.8"
   },
   {
    "id": "rev.T_state_pct",
    "where": "RQ3 state-triggered 81.3%",
-   "value": "79.8"
+   "value": "72.1"
   },
   {
    "id": "rev.T_state_n",
@@ -909,7 +909,7 @@
   {
    "id": "rev.T_welcome_pct",
    "where": "RQ3 welcome 53.3%",
-   "value": "51.1"
+   "value": "40.0"
   },
   {
    "id": "rev.T_welcome_n",
@@ -924,7 +924,7 @@
   {
    "id": "rev.top3_reply_M",
    "where": "RQ3 without top 3: 8 of 12",
-   "value": "7"
+   "value": "3"
   },
   {
    "id": "rev.entry_median",
@@ -949,7 +949,7 @@
   {
    "id": "rev.lag_nav_pct",
    "where": "RQ3 lags 3-10 navigation 30%",
-   "value": "34.0"
+   "value": "39.7"
   },
   {
    "id": "rev.lag_login_pct",
@@ -969,7 +969,7 @@
   {
    "id": "rev.spec_or_min",
    "where": "RQ3 ORs 0.61",
-   "value": "0.54"
+   "value": "0.50"
   },
   {
    "id": "rev.spec_or_max",
@@ -1025,7 +1025,7 @@
   {
    "id": "epi.return",
    "where": "RQ3; Abstract; Discussion (18 of the 24 dialogues)",
-   "value": "18"
+   "value": "11"
   },
   {
    "id": "aoi.clicks",
@@ -1040,32 +1040,22 @@
   {
    "id": "aoi.label",
    "where": "ESM Note 4",
-   "value": "1322"
+   "value": "1190"
   },
   {
    "id": "aoi.xy",
    "where": "ESM Note 4",
-   "value": "441"
+   "value": "501"
   },
   {
    "id": "aoi.resolved",
    "where": "ESM Note 4",
-   "value": "3220"
+   "value": "3148"
   },
   {
    "id": "aoi.resolved_pct",
    "where": "ESM Note 4",
-   "value": "93.8"
-  },
-  {
-   "id": "aoi.nav_in_M",
-   "where": "ESM Note 4",
-   "value": "333"
-  },
-  {
-   "id": "aoi.M_events",
-   "where": "ESM Note 4",
-   "value": "4046"
+   "value": "91.7"
   },
   {
    "id": "aoi.repeat_min_pct",
@@ -1080,7 +1070,7 @@
   {
    "id": "aoi.T_n",
    "where": "ESM Note 4",
-   "value": "264"
+   "value": "260"
   },
   {
    "id": "aoi.T_learners",
@@ -1095,22 +1085,147 @@
   {
    "id": "aoi.T_base_pct",
    "where": "RQ3; ESM Note 4",
-   "value": "63.9"
+   "value": "63.5"
   },
   {
    "id": "aoi.T_diff_pp",
    "where": "RQ3; ESM Note 4",
-   "value": "-13.9"
+   "value": "-13.5"
   },
   {
    "id": "aoi.T_diff_lo",
    "where": "RQ3; ESM Note 4",
-   "value": "-21.1"
+   "value": "-20.6"
   },
   {
    "id": "aoi.T_diff_hi",
    "where": "RQ3; ESM Note 4",
-   "value": "-3.8"
+   "value": "-3.1"
+  },
+  {
+   "id": "recode.back",
+   "where": "Data and Event Coding",
+   "value": "201"
+  },
+  {
+   "id": "dlg.n",
+   "where": "RQ3",
+   "value": "24"
+  },
+  {
+   "id": "dlg.ret5",
+   "where": "Abstract; RQ3; Discussion",
+   "value": "11"
+  },
+  {
+   "id": "dlg.left5",
+   "where": "Abstract; RQ3; Discussion",
+   "value": "10"
+  },
+  {
+   "id": "dlg.left_other",
+   "where": "RQ3",
+   "value": "8"
+  },
+  {
+   "id": "dlg.left_pct",
+   "where": "RQ3; Table S3",
+   "value": "41.7"
+  },
+  {
+   "id": "dlg.leave_base_pct",
+   "where": "RQ3; Table S3",
+   "value": "3.6"
+  },
+  {
+   "id": "mv.ret_lo",
+   "where": "RQ3",
+   "value": "45.8"
+  },
+  {
+   "id": "mv.ret_hi",
+   "where": "RQ3",
+   "value": "75.0"
+  },
+  {
+   "id": "rev.lag_M_pct",
+   "where": "RQ3",
+   "value": "18.9"
+  },
+  {
+   "id": "mv.C1",
+   "where": "RQ3; Table S3",
+   "value": "26"
+  },
+  {
+   "id": "mv.C2",
+   "where": "Table S3",
+   "value": "32"
+  },
+  {
+   "id": "mv.C3",
+   "where": "Table S3",
+   "value": "32"
+  },
+  {
+   "id": "mv.C4",
+   "where": "Table S3",
+   "value": "3"
+  },
+  {
+   "id": "mv.C5",
+   "where": "Table S3",
+   "value": "16"
+  },
+  {
+   "id": "mv.C6",
+   "where": "Table S3",
+   "value": "8"
+  },
+  {
+   "id": "mv.C7",
+   "where": "Table S3",
+   "value": "30"
+  },
+  {
+   "id": "jk.reply_next_M_lo",
+   "where": "Table S3",
+   "value": "7.3"
+  },
+  {
+   "id": "jk.reply_next_M_hi",
+   "where": "Table S3",
+   "value": "15.6"
+  },
+  {
+   "id": "jk.T_next_M_lo",
+   "where": "Table S3",
+   "value": "65.1"
+  },
+  {
+   "id": "jk.T_next_M_hi",
+   "where": "Table S3",
+   "value": "68.5"
+  },
+  {
+   "id": "jk.dialogue_ret5_lo",
+   "where": "Table S3",
+   "value": "38.1"
+  },
+  {
+   "id": "jk.dialogue_ret5_hi",
+   "where": "Table S3",
+   "value": "55.0"
+  },
+  {
+   "id": "jk.dialogue_left5_lo",
+   "where": "Table S3",
+   "value": "36.4"
+  },
+  {
+   "id": "jk.dialogue_left5_hi",
+   "where": "Table S3",
+   "value": "45.0"
   }
  ]
 }
